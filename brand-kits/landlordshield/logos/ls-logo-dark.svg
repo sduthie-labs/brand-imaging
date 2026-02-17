@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none">
+  <!-- Shield icon (dark variant for light backgrounds) -->
+  <path d="M20 4 L36 10 L36 22 C36 30 29 36 20 38 C11 36 4 30 4 22 L4 10 Z" fill="#e2e8f0" stroke="#1c2a3a" stroke-width="2"/>
+  <path d="M20 4 L36 10 L36 22 C36 30 29 36 20 38 Z" fill="#cbd5e0" stroke="none"/>
+  <path d="M20 4 L36 10 L36 22 C36 30 29 36 20 38 C11 36 4 30 4 22 L4 10 Z" fill="none" stroke="#1c2a3a" stroke-width="2"/>
+  <text x="20" y="26" text-anchor="middle" font-family="Outfit, system-ui, sans-serif" font-weight="800" font-size="14" fill="#1c2a3a" letter-spacing="-0.3">LS</text>
+  <!-- Wordmark (dark for light backgrounds) -->
+  <text x="48" y="22" font-family="Outfit, system-ui, sans-serif" font-weight="700" font-size="16" fill="#1c2a3a" letter-spacing="0.5">LANDLORD</text>
+  <text x="48" y="37" font-family="Outfit, system-ui, sans-serif" font-weight="700" font-size="16" fill="#0f1923" letter-spacing="0.5">SHIELD</text>
+</svg>

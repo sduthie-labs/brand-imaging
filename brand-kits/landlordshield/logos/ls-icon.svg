@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Shield shape -->
+  <path d="M24 4 L42 12 L42 26 C42 36 34 43 24 46 C14 43 6 36 6 26 L6 12 Z" fill="#151f2e" stroke="#4fd1c5" stroke-width="2.5"/>
+  <!-- Shield split (darker right half) -->
+  <path d="M24 4 L42 12 L42 26 C42 36 34 43 24 46 Z" fill="#0f1923" stroke="none"/>
+  <!-- Shield border re-apply on right -->
+  <path d="M24 4 L42 12 L42 26 C42 36 34 43 24 46 C14 43 6 36 6 26 L6 12 Z" fill="none" stroke="#4fd1c5" stroke-width="2.5"/>
+  <!-- Teal glow effect -->
+  <path d="M24 4 L42 12 L42 26 C42 36 34 43 24 46 C14 43 6 36 6 26 L6 12 Z" fill="none" stroke="#4fd1c5" stroke-width="1" opacity="0.4" transform="scale(1.03) translate(-0.7, -0.6)"/>
+  <!-- LS text -->
+  <text x="24" y="30" text-anchor="middle" font-family="Outfit, system-ui, sans-serif" font-weight="800" font-size="18" fill="#ffffff" letter-spacing="-0.5">LS</text>
+</svg>

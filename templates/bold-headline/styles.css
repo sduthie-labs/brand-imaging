@@ -17,12 +17,45 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--brand-text, #1e293b);
+  background-color: var(--brand-secondary, #1e293b);
   background-size: cover;
   background-position: center;
   padding: clamp(24px, 6%, 96px);
   overflow: hidden;
   font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+}
+
+/* Subtle gradient overlay for depth */
+.canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Radial glow from primary color */
+.canvas::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--brand-primary, #6366f1) 0%,
+    transparent 70%
+  );
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Dark overlay when a background image is present */
@@ -37,23 +70,34 @@
   z-index: 0;
 }
 
-/* Accent color strip — top-left decoration */
+/* Accent color strip — left edge */
 .accent-bar {
   position: absolute;
   top: 0;
   left: 0;
-  width: clamp(4px, 0.6%, 8px);
+  width: clamp(4px, 0.5%, 6px);
   height: 100%;
-  background: var(--brand-accent, #f59e0b);
+  background: linear-gradient(
+    180deg,
+    var(--brand-primary, #f59e0b),
+    var(--brand-accent, #f59e0b)
+  );
   z-index: 2;
 }
 
+/* Bottom accent bar */
 .accent-bar--bottom {
   top: auto;
   bottom: 0;
   left: 0;
-  width: 40%;
-  height: clamp(4px, 0.6%, 8px);
+  width: 100%;
+  height: clamp(3px, 0.5%, 5px);
+  background: linear-gradient(
+    90deg,
+    var(--brand-accent, #f59e0b) 0%,
+    var(--brand-primary, #6366f1) 40%,
+    transparent 70%
+  );
 }
 
 .content {
@@ -62,7 +106,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 85%;
+  max-width: 75%;
 }
 
 .title {
@@ -79,10 +123,10 @@
   font-family: var(--font-body, system-ui, -apple-system, sans-serif);
   font-size: clamp(12px, 2.2vw, 28px);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.5;
   margin-top: clamp(8px, 1.5vw, 20px);
-  max-width: 75%;
+  max-width: 80%;
 }
 
 .cta {
@@ -94,8 +138,8 @@
   font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
   font-size: clamp(12px, 1.8vw, 22px);
   font-weight: 700;
-  color: var(--brand-text, #1e293b);
-  background: var(--brand-accent, #f59e0b);
+  color: var(--brand-secondary, #1e293b);
+  background: var(--brand-primary, #f59e0b);
   padding: clamp(8px, 1.2vw, 16px) clamp(20px, 3vw, 48px);
   border-radius: clamp(4px, 0.5vw, 8px);
   text-transform: uppercase;

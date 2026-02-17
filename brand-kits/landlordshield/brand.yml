@@ -1,0 +1,38 @@
+name: Landlord Shield
+version: "1.0"
+
+colors:
+  primary: "#4fd1c5"
+  secondary: "#1c2a3a"
+  accent: "#f6ad55"
+  text: "#f7fafc"
+  background: "#0a0f18"
+  muted: "#1e2d3d"
+  success: "#68d391"
+  warning: "#f6ad55"
+  error: "#fc8181"
+
+typography:
+  heading:
+    family: Outfit
+    fallback: system-ui, -apple-system, sans-serif
+    weight: 700
+  body:
+    family: Inter
+    fallback: system-ui, -apple-system, sans-serif
+    weight: 400
+  accent:
+    family: Outfit
+    fallback: system-ui, -apple-system, sans-serif
+    weight: 600
+
+logos:
+  primary: logos/ls-logo.svg
+  light: logos/ls-logo-light.svg
+  dark: logos/ls-logo-dark.svg
+  icon: logos/ls-icon.svg
+
+defaults:
+  format: og
+  quality: 90
+  scaleFactor: 1
