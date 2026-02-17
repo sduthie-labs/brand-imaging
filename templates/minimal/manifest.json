@@ -1,0 +1,17 @@
+{
+  "name": "minimal",
+  "description": "A clean, minimal template with gradient background and centered text",
+  "version": "1.0.0",
+  "supportedFormats": ["*"],
+  "layoutStrategy": "scale",
+  "tags": ["simple", "gradient", "text"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string", "description": "Main headline text" },
+      "subtitle": { "type": "string", "description": "Optional subtitle" },
+      "tagline": { "type": "string", "description": "Optional small tagline" }
+    },
+    "required": ["title"]
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Geometric mark — white variant for dark backgrounds -->
+  <path d="M4 40 L20 8 L36 40 Z" fill="#ffffff"/>
+  <path d="M12 32 L20 16 L28 32 Z" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3"/>
+  <!-- Wordmark -->
+  <text x="48" y="36" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="#ffffff" letter-spacing="-0.5">
+    ACME
+  </text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Square icon: stylized "A" letterform -->
+  <rect width="48" height="48" rx="10" fill="#6366f1"/>
+  <path d="M14 36 L24 12 L34 36 Z" fill="#ffffff"/>
+  <path d="M19 30 L24 20 L29 30 Z" fill="#6366f1"/>
+</svg>

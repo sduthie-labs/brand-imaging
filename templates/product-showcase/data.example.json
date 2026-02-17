@@ -1,0 +1,12 @@
+{
+  "productName": "DevStack Pro",
+  "description": "The complete development environment with integrated CI/CD, monitoring, and team collaboration built in.",
+  "price": "$29/mo",
+  "badge": "Most Popular",
+  "features": [
+    "Unlimited repositories",
+    "Built-in CI/CD pipelines",
+    "Real-time collaboration",
+    "99.9% uptime SLA"
+  ]
+}

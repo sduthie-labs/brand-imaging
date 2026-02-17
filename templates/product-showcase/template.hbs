@@ -1,0 +1,53 @@
+<div class="canvas">
+  <!-- Left: product info -->
+  <div class="info-panel">
+    {{#if brand.logos.primary}}
+      <div class="brand-mark">
+        <img src="{{brand.logos.primary}}" alt="{{brand.name}} logo" />
+      </div>
+    {{/if}}
+
+    <div class="header-row">
+      <h1 class="product-name">{{productName}}</h1>
+      {{#if badge}}
+        <span class="badge">{{badge}}</span>
+      {{/if}}
+    </div>
+
+    {{#if description}}
+      <p class="description">{{description}}</p>
+    {{/if}}
+
+    {{#if price}}
+      <div class="price">{{price}}</div>
+    {{/if}}
+
+    {{#if features.length}}
+      <ul class="features">
+        {{#each features}}
+          <li class="feature-item">
+            <span class="feature-check">&#10003;</span>
+            <span>{{this}}</span>
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </div>
+
+  <!-- Right: product image area -->
+  <div class="image-panel">
+    {{#if productImage}}
+      <img class="product-image" src="{{productImage}}" alt="{{productName}}" />
+    {{else}}
+      <div class="image-placeholder">
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="16" cy="20" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M4 32 L16 24 L24 30 L32 22 L44 32" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</div>

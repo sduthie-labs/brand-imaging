@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  brand-imaging:
+    build: .
+    volumes:
+      - ./output:/app/output
+      - ./brand-kits:/app/brand-kits
+      - ./templates:/app/templates
+    environment:
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+      - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+      - NODE_ENV=production

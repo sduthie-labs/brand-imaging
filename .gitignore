@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Generated images
+output/
+*.png
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Test output artifacts
+tests/.test-output/
+
+# Font files in brand kits (keep examples)
+brand-kits/*/fonts/*.woff2
+!brand-kits/example/fonts/*.woff2
+
+# Puppeteer cache
+.puppeteer_cache/
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
+*.swo

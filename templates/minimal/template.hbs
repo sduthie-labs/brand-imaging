@@ -1,0 +1,17 @@
+<div class="canvas">
+  <div class="content">
+    <h1 class="title">{{title}}</h1>
+    {{#if subtitle}}
+      <p class="subtitle">{{subtitle}}</p>
+    {{/if}}
+    {{#if tagline}}
+      <p class="tagline">{{tagline}}</p>
+    {{/if}}
+  </div>
+
+  {{#if brand.logos.primary}}
+    <div class="logo">
+      <img src="{{brand.logos.primary}}" alt="{{brand.name}} logo" />
+    </div>
+  {{/if}}
+</div>

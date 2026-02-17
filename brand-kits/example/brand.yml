@@ -1,0 +1,37 @@
+name: "Acme Corp"
+version: "1.0"
+
+colors:
+  primary: "#6366f1"
+  secondary: "#8b5cf6"
+  accent: "#f59e0b"
+  text: "#1e293b"
+  background: "#ffffff"
+  muted: "#94a3b8"
+  success: "#10b981"
+  error: "#ef4444"
+
+typography:
+  heading:
+    family: "Inter"
+    fallback: "system-ui, -apple-system, sans-serif"
+    weight: 700
+  body:
+    family: "Inter"
+    fallback: "system-ui, -apple-system, sans-serif"
+    weight: 400
+  accent:
+    family: "Inter"
+    fallback: "system-ui, -apple-system, sans-serif"
+    weight: 600
+
+logos:
+  primary: "logos/acme-logo.svg"
+  light: "logos/acme-logo-light.svg"
+  dark: "logos/acme-logo-dark.svg"
+  icon: "logos/acme-icon.svg"
+
+defaults:
+  format: "og"
+  quality: 90
+  scaleFactor: 1

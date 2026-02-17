@@ -1,0 +1,26 @@
+<div class="canvas" {{#if backgroundImage}}style="background-image: url('{{backgroundImage}}')"{{/if}}>
+  {{#if backgroundImage}}
+    <div class="overlay"></div>
+  {{/if}}
+
+  <div class="accent-bar"></div>
+  <div class="accent-bar accent-bar--bottom"></div>
+
+  <div class="content">
+    <h1 class="title">{{title}}</h1>
+    {{#if subtitle}}
+      <p class="subtitle">{{subtitle}}</p>
+    {{/if}}
+    {{#if ctaText}}
+      <div class="cta">
+        <span class="cta-button">{{ctaText}}</span>
+      </div>
+    {{/if}}
+  </div>
+
+  {{#if brand.logos.primary}}
+    <div class="logo">
+      <img src="{{brand.logos.primary}}" alt="{{brand.name}} logo" />
+    </div>
+  {{/if}}
+</div>

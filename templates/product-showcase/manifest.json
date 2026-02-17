@@ -1,0 +1,24 @@
+{
+  "name": "product-showcase",
+  "description": "A modern product showcase template with feature list and pricing, inspired by e-commerce layouts",
+  "version": "1.0.0",
+  "supportedFormats": ["*"],
+  "layoutStrategy": "scale",
+  "tags": ["product", "ecommerce", "showcase", "features", "pricing"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "productName": { "type": "string", "description": "Product or service name" },
+      "description": { "type": "string", "description": "Short product description" },
+      "price": { "type": "string", "description": "Price string, e.g. '$29/mo'" },
+      "features": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "List of feature bullet points"
+      },
+      "productImage": { "type": "string", "description": "URL to product image" },
+      "badge": { "type": "string", "description": "Optional badge text, e.g. 'New' or 'Popular'" }
+    },
+    "required": ["productName"]
+  }
+}

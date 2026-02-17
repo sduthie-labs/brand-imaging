@@ -1,0 +1,50 @@
+<div class="canvas">
+  <!-- Left: text content -->
+  <div class="text-panel">
+    {{#if brand.logos.primary}}
+      <div class="brand-mark">
+        <img src="{{brand.logos.primary}}" alt="{{brand.name}} logo" />
+      </div>
+    {{/if}}
+
+    {{#if category}}
+      <span class="category">{{category}}</span>
+    {{/if}}
+
+    <h1 class="title">{{title}}</h1>
+
+    {{#if excerpt}}
+      <p class="excerpt">{{excerpt}}</p>
+    {{/if}}
+
+    <div class="meta">
+      {{#if author}}
+        <div class="author">
+          {{#if authorImage}}
+            <img class="author-avatar" src="{{authorImage}}" alt="{{author}}" />
+          {{else}}
+            <div class="author-avatar author-avatar--placeholder">
+              {{substring author 0 1}}
+            </div>
+          {{/if}}
+          <span class="author-name">{{author}}</span>
+        </div>
+      {{/if}}
+      {{#if publishDate}}
+        <span class="meta-divider"></span>
+        <span class="meta-text">{{publishDate}}</span>
+      {{/if}}
+      {{#if readTime}}
+        <span class="meta-divider"></span>
+        <span class="meta-text">{{readTime}}</span>
+      {{/if}}
+    </div>
+  </div>
+
+  <!-- Right: decorative panel -->
+  <div class="deco-panel">
+    <div class="deco-circle deco-circle--large"></div>
+    <div class="deco-circle deco-circle--small"></div>
+    <div class="deco-line"></div>
+  </div>
+</div>

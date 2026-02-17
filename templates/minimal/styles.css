@@ -1,0 +1,99 @@
+/* --------------------------------------------------------------------------
+   Minimal Template — Clean gradient background with centered text
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  position: relative;
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    45deg,
+    var(--brand-primary, #6366f1),
+    var(--brand-secondary, #8b5cf6)
+  );
+  padding: clamp(24px, 5%, 80px);
+  overflow: hidden;
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+}
+
+/* Subtle decorative radial overlay for depth */
+.canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
+  font-size: clamp(24px, 5vw, 72px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+  font-size: clamp(14px, 2.5vw, 32px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin-top: clamp(8px, 1.5vw, 24px);
+  max-width: 90%;
+}
+
+.tagline {
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+  font-size: clamp(10px, 1.5vw, 18px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: clamp(12px, 2vw, 32px);
+}
+
+.logo {
+  position: absolute;
+  bottom: clamp(12px, 2%, 32px);
+  right: clamp(12px, 2%, 32px);
+  z-index: 1;
+  max-width: clamp(48px, 8%, 120px);
+  max-height: clamp(24px, 4%, 60px);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.8;
+}

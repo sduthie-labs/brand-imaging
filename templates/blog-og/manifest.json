@@ -1,0 +1,21 @@
+{
+  "name": "blog-og",
+  "description": "A professional blog post Open Graph card with clean typography hierarchy and author info",
+  "version": "1.0.0",
+  "supportedFormats": ["*"],
+  "layoutStrategy": "scale",
+  "tags": ["blog", "og", "article", "card", "preview"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string", "description": "Blog post title" },
+      "excerpt": { "type": "string", "description": "Short excerpt or description" },
+      "author": { "type": "string", "description": "Author name" },
+      "authorImage": { "type": "string", "description": "URL to author avatar image" },
+      "category": { "type": "string", "description": "Post category or tag" },
+      "readTime": { "type": "string", "description": "Estimated read time, e.g. '5 min read'" },
+      "publishDate": { "type": "string", "description": "Publication date string" }
+    },
+    "required": ["title"]
+  }
+}

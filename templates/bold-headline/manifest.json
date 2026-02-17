@@ -1,0 +1,18 @@
+{
+  "name": "bold-headline",
+  "description": "A bold, high-impact announcement template with dramatic typography and accent decoration",
+  "version": "1.0.0",
+  "supportedFormats": ["*"],
+  "layoutStrategy": "scale",
+  "tags": ["bold", "announcement", "headline", "cta"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string", "description": "Main bold headline" },
+      "subtitle": { "type": "string", "description": "Supporting subtitle text" },
+      "ctaText": { "type": "string", "description": "Call-to-action button label" },
+      "backgroundImage": { "type": "string", "description": "Optional background image URL" }
+    },
+    "required": ["title"]
+  }
+}

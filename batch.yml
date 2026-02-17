@@ -1,0 +1,27 @@
+outputDir: ./output
+brandKit: ./brand-kits/example
+concurrency: 4
+
+jobs:
+  - template: ./templates/minimal
+    formats: [og, twitter-card, instagram-post]
+    data:
+      title: "Welcome to Brand Imaging"
+      subtitle: "Generate beautiful social media images"
+      tagline: "Powered by Puppeteer"
+
+  - template: ./templates/bold-headline
+    formats: [og, facebook-post, linkedin-post]
+    data:
+      title: "Ship Faster"
+      subtitle: "Build and deploy with confidence"
+      ctaText: "Get Started"
+
+  - template: ./templates/blog-og
+    formats: [og, twitter-card]
+    data:
+      title: "How to Build Scalable APIs"
+      excerpt: "Learn the fundamentals of API design"
+      author: "Jane Developer"
+      category: "Engineering"
+      readTime: "5 min read"
