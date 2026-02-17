@@ -99,6 +99,12 @@ export const IMAGE_FORMATS: readonly ImageFormat[] = [
   fmt('pinterest-pin', 'Pinterest Pin', 'pinterest', 'social', 1000, 1500,
     'Standard vertical pin for Pinterest'),
 
+  // Profile Pictures
+  fmt('profile-pic', 'Profile Picture', 'og', 'social', 400, 400,
+    'Square profile picture suitable for most platforms'),
+  fmt('profile-pic-lg', 'Profile Picture Large', 'og', 'social', 800, 800,
+    'Large square profile picture for YouTube and high-DPI displays'),
+
   // Email
   fmt('email-header', 'Email Header', 'email', 'email', 600, 200,
     'Header banner for HTML emails'),

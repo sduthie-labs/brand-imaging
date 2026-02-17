@@ -1,0 +1,106 @@
+brandKit: ../../brand-kits/landlordshield
+outputDir: ./
+
+jobs:
+  # --- MINIMAL ---
+  - template: minimal
+    formats:
+      - twitter-card
+      - twitter-header
+      - twitter-post
+      - facebook-post
+      - facebook-cover
+      - facebook-story
+      - instagram-post
+      - instagram-story
+      - instagram-landscape
+      - linkedin-post
+      - linkedin-cover
+      - linkedin-company
+      - youtube-thumbnail
+      - youtube-channel-art
+      - pinterest-pin
+      - profile-pic
+      - profile-pic-lg
+    data:
+      title: "Property Compliance Made Simple"
+      subtitle: "Track deadlines. Generate notices. Avoid penalties."
+      tagline: "landlordshield.biz"
+
+  # --- BOLD HEADLINE ---
+  - template: bold-headline
+    formats:
+      - twitter-card
+      - twitter-header
+      - twitter-post
+      - facebook-post
+      - facebook-cover
+      - facebook-story
+      - instagram-post
+      - instagram-story
+      - instagram-landscape
+      - linkedin-post
+      - linkedin-cover
+      - linkedin-company
+      - youtube-thumbnail
+      - youtube-channel-art
+      - pinterest-pin
+      - profile-pic
+      - profile-pic-lg
+    data:
+      title: "LANDLORD SHIELD"
+      subtitle: "Renters Rights Act compliance for landlords and property managers"
+      ctaText: "START FREE"
+
+  # --- BLOG OG ---
+  - template: blog-og
+    formats:
+      - twitter-card
+      - twitter-header
+      - twitter-post
+      - facebook-post
+      - facebook-cover
+      - facebook-story
+      - instagram-post
+      - instagram-story
+      - instagram-landscape
+      - linkedin-post
+      - linkedin-cover
+      - linkedin-company
+      - youtube-thumbnail
+      - youtube-channel-art
+      - pinterest-pin
+      - profile-pic
+      - profile-pic-lg
+    data:
+      title: "5 things every landlord must know about the Renters Rights Act"
+      excerpt: "The Renters Rights Act 2025 changes everything. Here is what you need to do to stay compliant."
+      category: "Compliance Guide"
+      author: "Landlord Shield"
+      readTime: "4 min read"
+
+  # --- PRODUCT SHOWCASE ---
+  - template: product-showcase
+    formats:
+      - twitter-card
+      - twitter-header
+      - twitter-post
+      - facebook-post
+      - facebook-cover
+      - facebook-story
+      - instagram-post
+      - instagram-story
+      - instagram-landscape
+      - linkedin-post
+      - linkedin-cover
+      - linkedin-company
+      - youtube-thumbnail
+      - youtube-channel-art
+      - pinterest-pin
+      - profile-pic
+      - profile-pic-lg
+    data:
+      productName: "Shield"
+      description: "Deadline tracking, legal notice generation, and penalty protection. Everything you need to stay compliant."
+      price: "From £15/mo"
+      badge: "Most Popular"

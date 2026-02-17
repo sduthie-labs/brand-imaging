@@ -1,4 +1,4 @@
-import { resolve, basename } from 'node:path';
+import { resolve, dirname, basename } from 'node:path';
 import { readFile } from 'node:fs/promises';
 import chalk from 'chalk';
 import ora from 'ora';
@@ -79,6 +79,14 @@ export const batchCommand: CommandModule<object, BatchArgs> = {
       }
 
       const config = validationResult.data;
+      const configDir = dirname(configPath);
+
+      // Resolve brandKit and outputDir relative to the config file's directory
+      if (config.brandKit) {
+        config.brandKit = resolve(configDir, config.brandKit);
+      }
+      config.outputDir = resolve(configDir, config.outputDir);
+
       const concurrency = argv.concurrency ?? config.concurrency ?? 4;
       configSpinner.succeed(
         `Batch config loaded: ${chalk.cyan(config.jobs.length)} jobs, concurrency ${chalk.cyan(String(concurrency))}`,
@@ -102,9 +110,9 @@ export const batchCommand: CommandModule<object, BatchArgs> = {
 
         const resolvedTemplate = await resolveTemplatePath(job.template);
         const templateName = basename(resolvedTemplate);
-        const jobOutputDir = resolve(
-          job.outputDir ?? config.outputDir,
-        );
+        const jobOutputDir = job.outputDir
+          ? resolve(configDir, job.outputDir)
+          : config.outputDir;
 
         for (const format of formats) {
           const outputPath = generateOutputPath({
