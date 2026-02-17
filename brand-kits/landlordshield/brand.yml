@@ -1,6 +1,114 @@
-name: Landlord Shield
-version: "1.0"
+# ===========================================================================
+# Landlord Shield — Brand Identity System
+# Version 2.0 — "Brand as Code"
+#
+# This file is the single source of truth for the entire brand identity.
+# It is machine-readable, version-controlled, and consumed by tooling
+# including brand-imaging templates, CI/CD lint rules, and design token
+# generators.
+# ===========================================================================
 
+name: Landlord Shield
+version: "2.0"
+domain: landlordshield.biz
+description: >-
+  Property compliance made simple. Landlord Shield is a SaaS platform that
+  helps UK landlords comply with the Renters' Rights Act 2025 by tracking
+  compliance deadlines, generating legal notices, protecting against
+  penalties, and streamlining property management.
+
+# ---------------------------------------------------------------------------
+# 1. BRAND FOUNDATION
+# ---------------------------------------------------------------------------
+foundation:
+  purpose: >-
+    To give every UK landlord the tools and confidence to stay fully compliant
+    with evolving property legislation without needing a solicitor on retainer.
+  vision: >-
+    Every landlord in the UK operates compliantly and confidently because the
+    complexity of property regulation is handled by intelligent software, not
+    guesswork.
+  mission: >-
+    We deliver straightforward property compliance software through deadline
+    tracking, automated legal notices, and management tools that keep landlords
+    on the right side of the Renters' Rights Act 2025.
+  tagline: "Property Compliance Made Simple"
+  taglines_secondary:
+    - "Stay compliant. Stay protected."
+    - "Built for landlords. Backed by legislation."
+    - "Shield up. Stay compliant."
+
+  values:
+    - name: Compliance-First
+      description: >-
+        Every feature we build starts with the law. We translate complex
+        regulation into clear actions so landlords never miss a deadline
+        or risk a penalty.
+    - name: Simplicity
+      description: >-
+        Property legislation is complicated enough. We strip out the legal
+        jargon and give landlords clean dashboards, plain-language guidance,
+        and automated workflows.
+    - name: Reliability
+      description: >-
+        When legislation changes or a deadline approaches, our platform
+        is accurate, up-to-date, and dependable. Landlords trust us because
+        we earn that trust daily.
+    - name: Advocacy
+      description: >-
+        We are on the landlord's side. Our tools, content, and support are
+        designed to help landlords do the right thing, not to penalise them
+        for what they do not know.
+
+  personality:
+    primary:
+      - Authoritative
+      - Protective
+      - Straightforward
+    secondary:
+      - Knowledgeable
+      - Approachable
+      - Modern
+
+  positioning:
+    target_audience: >-
+      UK landlords ranging from individuals with a single property to large
+      property management companies with hundreds of units. B2C individual
+      landlords and B2B letting agents, property management firms, and
+      housing associations.
+    differentiation: >-
+      Purpose-built compliance software for the Renters' Rights Act 2025,
+      not a generic property management tool with a compliance checkbox
+      bolted on.
+    competitors:
+      - name: "Generic property management platforms"
+        weakness: "Property management first, compliance as an afterthought"
+      - name: "Solicitor-led compliance services"
+        weakness: "Expensive, slow, manual, not scalable"
+      - name: "Spreadsheets and manual tracking"
+        weakness: "Error-prone, no automation, no legal notice generation"
+    pricing:
+      model: "Tiered SaaS subscription"
+      tiers:
+        - name: Vault
+          price: "Free"
+          audience: "Landlords getting started or with minimal compliance needs"
+        - name: Shield
+          price: "£15/mo"
+          audience: "Individual landlords with a small portfolio"
+        - name: Aegis
+          price: "£29/mo"
+          audience: "Landlords with growing portfolios needing full compliance tools"
+        - name: Bastion
+          price: "£49/mo"
+          audience: "Professional landlords and small management companies"
+        - name: Custom
+          price: "Custom pricing"
+          audience: "Large property management companies and enterprise"
+
+# ---------------------------------------------------------------------------
+# 2. VISUAL IDENTITY
+# ---------------------------------------------------------------------------
 colors:
   primary: "#4fd1c5"
   secondary: "#1c2a3a"
@@ -11,20 +119,207 @@ colors:
   success: "#68d391"
   warning: "#f6ad55"
   error: "#fc8181"
+  info: "#63b3ed"
+
+  primary_50: "#edfcfb"
+  primary_100: "#c4f5f0"
+  primary_200: "#9aede5"
+  primary_300: "#6fe5d9"
+  primary_400: "#4fd1c5"
+  primary_500: "#38b2ac"
+  primary_600: "#2c9a94"
+  primary_700: "#21807a"
+  primary_800: "#17655f"
+  primary_900: "#0e4a45"
+  primary_950: "#072e2b"
+
+  neutral_50: "#f7fafc"
+  neutral_100: "#edf2f7"
+  neutral_200: "#e2e8f0"
+  neutral_300: "#cbd5e0"
+  neutral_400: "#a0aec0"
+  neutral_500: "#718096"
+  neutral_600: "#4a5568"
+  neutral_700: "#2d3748"
+  neutral_800: "#1a202c"
+  neutral_850: "#131a27"
+  neutral_900: "#0f1520"
+  neutral_950: "#0a0f18"
+
+  accent_50: "#fffaf0"
+  accent_100: "#feebc8"
+  accent_200: "#fbd38d"
+  accent_300: "#f6ad55"
+  accent_400: "#ed8936"
+  accent_500: "#dd6b20"
+  accent_600: "#c05621"
+  accent_700: "#9c4221"
+  accent_800: "#7b341e"
+  accent_900: "#652b19"
+
+  surface_base: "#0a0f18"
+  surface_raised: "#111827"
+  surface_overlay: "#1c2a3a"
+  surface_sunken: "#060a11"
+
+gradients:
+  - name: shield-glow
+    type: radial
+    css: "radial-gradient(ellipse at 30% 50%, rgba(79, 209, 197, 0.15), transparent 70%)"
+    usage: "Hero sections, card hover states"
+  - name: dark-fade
+    type: linear
+    css: "linear-gradient(180deg, #0a0f18 0%, #131a27 100%)"
+    usage: "Page backgrounds, section transitions"
+  - name: cta-gradient
+    type: linear
+    css: "linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%)"
+    usage: "Primary action buttons, key interactive elements"
+  - name: accent-warmth
+    type: linear
+    css: "linear-gradient(135deg, #f6ad55 0%, #ed8936 100%)"
+    usage: "Secondary CTAs, warning banners, promotional badges"
+  - name: hero-mesh
+    type: linear
+    css: "linear-gradient(135deg, #0a0f18 0%, #1c2a3a 50%, #0a0f18 100%)"
+    usage: "Hero section mesh backgrounds"
 
 typography:
   heading:
     family: Outfit
     fallback: system-ui, -apple-system, sans-serif
     weight: 700
+    source: "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
   body:
     family: Inter
     fallback: system-ui, -apple-system, sans-serif
     weight: 400
+    source: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
   accent:
     family: Outfit
     fallback: system-ui, -apple-system, sans-serif
     weight: 600
+  mono:
+    family: JetBrains Mono
+    fallback: "Consolas, 'Courier New', monospace"
+    weight: 400
+    usage: "Policy numbers, reference codes, technical data"
+
+  scale:
+    xs:
+      size: "0.75rem"
+      line_height: "1rem"
+      letter_spacing: "0.01em"
+      usage: "Captions, fine print, timestamps"
+    sm:
+      size: "0.875rem"
+      line_height: "1.25rem"
+      letter_spacing: "0.005em"
+      usage: "Secondary body text, labels, metadata"
+    base:
+      size: "1rem"
+      line_height: "1.5rem"
+      letter_spacing: "0em"
+      usage: "Default body text, form inputs"
+    lg:
+      size: "1.125rem"
+      line_height: "1.75rem"
+      letter_spacing: "-0.005em"
+      usage: "Lead paragraphs, emphasized body text"
+    xl:
+      size: "1.25rem"
+      line_height: "1.75rem"
+      letter_spacing: "-0.01em"
+      usage: "Card titles, section introductions"
+    2xl:
+      size: "1.5rem"
+      line_height: "2rem"
+      letter_spacing: "-0.015em"
+      usage: "H4, sub-section headings"
+    3xl:
+      size: "1.875rem"
+      line_height: "2.25rem"
+      letter_spacing: "-0.02em"
+      usage: "H3, section headings"
+    4xl:
+      size: "2.25rem"
+      line_height: "2.5rem"
+      letter_spacing: "-0.025em"
+      usage: "H2, page section titles"
+    5xl:
+      size: "3rem"
+      line_height: "1.1"
+      letter_spacing: "-0.03em"
+      usage: "H1, hero headlines"
+    6xl:
+      size: "3.75rem"
+      line_height: "1.05"
+      letter_spacing: "-0.035em"
+      usage: "Display text, landing page heroes"
+    7xl:
+      size: "4.5rem"
+      line_height: "1"
+      letter_spacing: "-0.04em"
+      usage: "Oversized display, impact statements"
+
+  weights:
+    light: 300
+    regular: 400
+    medium: 500
+    semibold: 600
+    bold: 700
+    extrabold: 800
+
+spacing:
+  unit: "0.25rem"
+  scale:
+    0: "0"
+    px: "1px"
+    0.5: "0.125rem"
+    1: "0.25rem"
+    2: "0.5rem"
+    3: "0.75rem"
+    4: "1rem"
+    5: "1.25rem"
+    6: "1.5rem"
+    8: "2rem"
+    10: "2.5rem"
+    12: "3rem"
+    16: "4rem"
+    20: "5rem"
+    24: "6rem"
+    32: "8rem"
+    40: "10rem"
+    48: "12rem"
+    64: "16rem"
+
+borders:
+  radii:
+    none: "0"
+    sm: "0.25rem"
+    md: "0.375rem"
+    lg: "0.5rem"
+    xl: "0.75rem"
+    2xl: "1rem"
+    3xl: "1.5rem"
+    full: "9999px"
+  widths:
+    thin: "1px"
+    medium: "2px"
+    thick: "4px"
+  default_color: "#1e2d3d"
+
+shadows:
+  sm: "0 1px 2px rgba(0, 0, 0, 0.3)"
+  md: "0 4px 6px rgba(0, 0, 0, 0.35)"
+  lg: "0 10px 15px rgba(0, 0, 0, 0.4)"
+  xl: "0 20px 25px rgba(0, 0, 0, 0.45)"
+  2xl: "0 25px 50px rgba(0, 0, 0, 0.5)"
+  inner: "inset 0 2px 4px rgba(0, 0, 0, 0.3)"
+  glow_primary: "0 0 20px rgba(79, 209, 197, 0.25)"
+  glow_accent: "0 0 20px rgba(246, 173, 85, 0.25)"
+  card: "0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(79, 209, 197, 0.06)"
+  none: "none"
 
 logos:
   primary: logos/ls-logo.svg
@@ -32,7 +327,350 @@ logos:
   dark: logos/ls-logo-dark.svg
   icon: logos/ls-icon.svg
 
+  usage:
+    min_width: "120px"
+    min_height: "40px"
+    icon_min_size: "32px"
+    clear_space: "1.5x icon height on all sides"
+    approved_backgrounds:
+      - "#0a0f18"
+      - "#111827"
+      - "#1c2a3a"
+      - "#ffffff"
+    forbidden_backgrounds:
+      - "Busy photographic backgrounds without overlay"
+      - "Colors that clash with teal primary"
+    rules:
+      - "Never rotate, skew, or distort the logo"
+      - "Never change the logo colors outside approved variants"
+      - "On light backgrounds use the dark variant; on dark backgrounds use the light or primary variant"
+
+# ---------------------------------------------------------------------------
+# 3. BRAND VOICE AND TONE
+# ---------------------------------------------------------------------------
+voice:
+  summary: >-
+    Landlord Shield sounds like a knowledgeable compliance expert who speaks
+    plainly: authoritative without being legalistic, clear without being
+    condescending, and protective without being paternalistic. We translate
+    complex legislation into simple actions.
+
+  traits:
+    - adjective: Authoritative
+      description: >-
+        We know UK property legislation inside out. We speak with the
+        confidence that comes from specialism in the Renters' Rights Act
+        and broader landlord regulation.
+      do: "Your Section 21 notice deadline is 14 March. We have generated the correct form."
+      dont: "You might want to check if your notice is still valid. Things may have changed."
+
+    - adjective: Clear
+      description: >-
+        We replace legal jargon with plain language. Every sentence should
+        be understandable on first read, even when explaining complex
+        regulation.
+      do: "The Renters' Rights Act requires you to register with the new ombudsman by June. We will remind you."
+      dont: "Pursuant to the provisions set forth in the Act, registration obligations may apply to qualifying landlords."
+
+    - adjective: Protective
+      description: >-
+        We frame every feature through the lens of what it shields the
+        landlord from: penalties, missed deadlines, non-compliance risk.
+        Benefits over features.
+      do: "Shield yourself from penalties with automated compliance tracking."
+      dont: "Our platform offers a compliance tracking feature for properties."
+
+    - adjective: Direct
+      description: >-
+        We get to the point. Short sentences. Active voice. No filler
+        paragraphs. Landlords are busy; respect their time.
+      do: "Track every deadline. Generate every notice. Stay compliant."
+      dont: "Why not take a few minutes to explore our comprehensive suite of compliance management tools?"
+
+    - adjective: Human
+      description: >-
+        We acknowledge that keeping up with changing legislation is
+        stressful and that landlords are real people with real concerns
+        about getting it right. We never sound robotic or bureaucratic.
+      do: "New regulation can feel overwhelming. That is exactly why we built this."
+      dont: "Our compliance management solution is available for your regulatory needs."
+
+  tone_modifiers:
+    marketing:
+      energy: high
+      formality: low
+      humor: subtle
+      description: >-
+        Bold, punchy, benefit-led. Short copy. Strong CTAs. Lead with the
+        compliance pain point and resolve it immediately.
+      example: "The Renters' Rights Act changes everything. Landlord Shield keeps you compliant. Start free."
+    social:
+      energy: high
+      formality: low
+      humor: moderate
+      description: >-
+        Conversational, friendly, community-minded. Can be witty about
+        bureaucracy but never flippant about real compliance risk.
+      example: "New legislation dropped and your to-do list just tripled. Or you could let Landlord Shield handle it."
+    support:
+      energy: calm
+      formality: medium
+      humor: none
+      description: >-
+        Empathetic, patient, solution-oriented. Acknowledge the confusion
+        before offering the fix. Compliance questions deserve clear answers.
+      example: "I understand this deadline is confusing. Let me walk you through exactly what you need to do and by when."
+    formal:
+      energy: low
+      formality: high
+      humor: none
+      description: >-
+        Legal guidance documents, regulatory summaries, partnership
+        correspondence. Precise but still accessible.
+      example: "Under the Renters' Rights Act 2025, landlords are required to register with the approved ombudsman scheme within the prescribed timeframe."
+
+  vocabulary:
+    preferred:
+      - term: landlord
+        instead_of: ["property owner", "property investor", "buy-to-let investor"]
+      - term: shield
+        instead_of: ["protect", "safeguard", "secure"]
+      - term: comply / compliance
+        instead_of: ["adhere to regulations", "meet obligations", "satisfy requirements"]
+      - term: tenant
+        instead_of: ["occupier", "lessee", "renter"]
+      - term: property
+        instead_of: ["asset", "dwelling", "unit", "premises"]
+      - term: deadline
+        instead_of: ["prescribed period", "statutory timeframe", "regulatory window"]
+      - term: penalty
+        instead_of: ["sanction", "enforcement action", "financial consequence"]
+      - term: start free
+        instead_of: ["request a demo", "begin your journey", "sign up for a trial"]
+    banned_words:
+      - word: "disruption"
+        reason: "Overused tech jargon"
+      - word: "innovative"
+        reason: "Empty buzzword. Show don't tell."
+      - word: "leverage"
+        reason: "Corporate speak"
+      - word: "seamless"
+        reason: "Overused to the point of meaninglessness"
+      - word: "peace of mind"
+        reason: "Insurance cliche. Describe the actual benefit."
+      - word: "insurance"
+        reason: "We are a compliance software platform, not an insurer."
+    banned_phrases:
+      - "we're not like other platforms"
+      - "in today's fast-paced world"
+      - "it's that simple"
+      - "act now before it's too late"
+
+# ---------------------------------------------------------------------------
+# 4. CONTENT RULES
+# ---------------------------------------------------------------------------
+content:
+  headlines:
+    style: sentence_case
+    max_length: 70
+    rules:
+      - "Lead with the benefit, not the feature"
+      - "Use active voice"
+      - "Numbers as digits (5, not five) in headlines"
+
+  format_limits:
+    tweet: 250
+    meta_description: 155
+    email_subject: 50
+    og_title: 60
+    og_description: 120
+    cta_button: 25
+    tagline: 50
+
+  cta_patterns:
+    primary:
+      - "Start free"
+      - "Shield your property"
+      - "Check compliance"
+    secondary:
+      - "Learn more"
+      - "See pricing"
+      - "Talk to our team"
+    rules:
+      - "Always start with a verb"
+      - "Maximum 4 words for button labels"
+      - "Never use 'Submit' or 'Click here'"
+
+  hashtags:
+    branded: ["#LandlordShield", "#ShieldUp"]
+    campaign: ["#LandlordLife", "#ComplianceMadeSimple", "#RentersRightsAct"]
+    industry: ["#PropertyCompliance", "#UKLandlord", "#PropertyManagement", "#RentersRights"]
+    rules:
+      - "Maximum 5 hashtags per post"
+      - "Always include at least one branded hashtag"
+
+  emoji:
+    policy: restricted
+    allowed_contexts: [social_media, informal_email]
+    forbidden_contexts: [policy_documents, claims_correspondence, website_body_copy]
+
+# ---------------------------------------------------------------------------
+# 5. SOCIAL MEDIA
+# ---------------------------------------------------------------------------
+social:
+  platforms:
+    twitter:
+      handle: "@landlordshield"
+      voice_adjustment: "Punchier, more conversational. Legislation updates and quick compliance tips perform well."
+      posting:
+        frequency: "3-5 posts per week"
+        best_times: ["09:00", "12:30", "17:00"]
+        timezone: "Europe/London"
+      content_mix:
+        compliance_tips: 30
+        legislation_updates: 20
+        product: 20
+        engagement: 15
+        landlord_advice: 15
+    linkedin:
+      handle: "landlord-shield"
+      voice_adjustment: "Slightly more formal. Lead with regulatory insight, data, or compliance deadlines. Target both individual landlords and property management firms."
+      posting:
+        frequency: "2-3 posts per week"
+        best_times: ["08:00", "12:00"]
+        timezone: "Europe/London"
+      content_mix:
+        thought_leadership: 30
+        legislation_analysis: 25
+        product: 20
+        case_studies: 15
+        company_culture: 10
+    instagram:
+      handle: "@landlordshield"
+      voice_adjustment: "Visual-first. Carousels for compliance checklists. Reels for quick legislation explainers."
+      posting:
+        frequency: "3-4 posts per week"
+        best_times: ["11:00", "19:00"]
+        timezone: "Europe/London"
+      content_mix:
+        compliance_checklists: 30
+        legislation_explainers: 25
+        product: 15
+        landlord_tips: 15
+        community: 15
+    facebook:
+      handle: "LandlordShield"
+      voice_adjustment: "Community-oriented. Answer compliance questions in comments. Build a supportive landlord community."
+      posting:
+        frequency: "2-3 posts per week"
+        best_times: ["09:00", "13:00"]
+        timezone: "Europe/London"
+      content_mix:
+        compliance_advice: 30
+        legislation_updates: 20
+        product: 20
+        community: 20
+        engagement: 10
+
+  global_rules:
+    - "Never engage in political commentary"
+    - "Never disparage competitor brands by name"
+    - "Always respond to direct questions within 4 business hours"
+    - "All visuals must use the approved brand color palette"
+
+# ---------------------------------------------------------------------------
+# 6. DESIGN TOKENS
+# ---------------------------------------------------------------------------
+tokens:
+  css_custom_properties:
+    "--brand-primary": "#4fd1c5"
+    "--brand-secondary": "#1c2a3a"
+    "--brand-accent": "#f6ad55"
+    "--brand-text": "#f7fafc"
+    "--brand-background": "#0a0f18"
+    "--brand-muted": "#1e2d3d"
+    "--brand-success": "#68d391"
+    "--brand-warning": "#f6ad55"
+    "--brand-error": "#fc8181"
+    "--brand-info": "#63b3ed"
+    "--surface-base": "#0a0f18"
+    "--surface-raised": "#111827"
+    "--surface-overlay": "#1c2a3a"
+    "--font-heading": "'Outfit', system-ui, -apple-system, sans-serif"
+    "--font-body": "'Inter', system-ui, -apple-system, sans-serif"
+    "--radius-sm": "0.25rem"
+    "--radius-md": "0.375rem"
+    "--radius-lg": "0.5rem"
+    "--radius-xl": "0.75rem"
+    "--shadow-glow": "0 0 20px rgba(79, 209, 197, 0.25)"
+    "--shadow-card": "0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(79, 209, 197, 0.06)"
+
+  tailwind:
+    colors:
+      brand:
+        primary: "#4fd1c5"
+        secondary: "#1c2a3a"
+        accent: "#f6ad55"
+        text: "#f7fafc"
+        bg: "#0a0f18"
+        muted: "#1e2d3d"
+      teal:
+        50: "#edfcfb"
+        400: "#4fd1c5"
+        500: "#38b2ac"
+        600: "#2c9a94"
+        700: "#21807a"
+        900: "#0e4a45"
+      navy:
+        800: "#1a202c"
+        900: "#0f1520"
+        950: "#0a0f18"
+    fontFamily:
+      heading: ["Outfit", "system-ui", "-apple-system", "sans-serif"]
+      body: ["Inter", "system-ui", "-apple-system", "sans-serif"]
+
+# ---------------------------------------------------------------------------
+# 7. ACCESSIBILITY
+# ---------------------------------------------------------------------------
+accessibility:
+  standard: "WCAG 2.1 AA"
+  contrast:
+    minimum_ratio: 4.5
+    large_text_ratio: 3.0
+    verified_pairs:
+      - foreground: "#f7fafc"
+        background: "#0a0f18"
+        ratio: 18.3
+        passes: "AAA"
+      - foreground: "#4fd1c5"
+        background: "#0a0f18"
+        ratio: 9.1
+        passes: "AAA"
+      - foreground: "#f6ad55"
+        background: "#0a0f18"
+        ratio: 8.7
+        passes: "AAA"
+
+# ---------------------------------------------------------------------------
+# 8. IMAGE GENERATION DEFAULTS
+# ---------------------------------------------------------------------------
 defaults:
   format: og
   quality: 90
   scaleFactor: 1
+
+meta:
+  created: "2025-02-17"
+  last_updated: "2026-02-17"
+  maintainer: "Brand Team"
+  review_cadence: quarterly
+  changelog:
+    - version: "1.0"
+      date: "2025-02-17"
+      summary: "Initial brand kit with core colors, typography, and logos"
+    - version: "2.0"
+      date: "2026-02-17"
+      summary: "Full brand-as-code: color scales, voice/tone, content rules, social strategy, design tokens"
+    - version: "2.1"
+      date: "2026-02-17"
+      summary: "Corrected brand foundation, voice, content, and social sections to reflect property compliance SaaS positioning (not insurance)"

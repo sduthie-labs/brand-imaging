@@ -21,15 +21,35 @@
   font-family: var(--font-body, system-ui, -apple-system, sans-serif);
 }
 
+/* Top accent gradient bar */
+.canvas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(3px, 0.4vw, 5px);
+  background: linear-gradient(
+    90deg,
+    var(--brand-primary, #6366f1) 0%,
+    var(--brand-accent, #8b5cf6) 60%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
 /* ---- Left text panel ---- */
 
 .text-panel {
+  position: relative;
   flex: 1 1 62%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: clamp(20px, 5%, 64px);
   z-index: 1;
+  border-right: clamp(1px, 0.15vw, 2px) solid
+    color-mix(in srgb, var(--brand-primary, #6366f1) 12%, transparent);
 }
 
 .brand-mark {
@@ -52,14 +72,16 @@
   color: var(--brand-primary, #6366f1);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: color-mix(in srgb, var(--brand-primary, #6366f1) 15%, transparent);
+  background: color-mix(in srgb, var(--brand-primary, #6366f1) 10%, transparent);
   padding: clamp(2px, 0.4vw, 6px) clamp(6px, 1vw, 14px);
-  border-radius: clamp(2px, 0.3vw, 4px);
+  border-radius: 0 clamp(2px, 0.3vw, 4px) clamp(2px, 0.3vw, 4px) 0;
+  border-left: clamp(2px, 0.3vw, 3px) solid var(--brand-primary, #6366f1);
   margin-bottom: clamp(8px, 1.5vw, 18px);
   align-self: flex-start;
 }
 
 .title {
+  position: relative;
   font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
   font-size: clamp(18px, 3.8vw, 48px);
   font-weight: 700;
@@ -67,6 +89,24 @@
   line-height: 1.2;
   letter-spacing: -0.02em;
   max-width: 95%;
+  padding-bottom: clamp(8px, 1.5vw, 18px);
+  text-shadow: 0 0 clamp(20px, 4vw, 50px) color-mix(in srgb, var(--brand-primary, #6366f1) 6%, transparent);
+}
+
+/* Short accent underline below title */
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(32px, 6vw, 64px);
+  height: clamp(2px, 0.35vw, 4px);
+  background: linear-gradient(
+    90deg,
+    var(--brand-primary, #6366f1),
+    color-mix(in srgb, var(--brand-primary, #6366f1) 40%, transparent)
+  );
+  border-radius: clamp(1px, 0.15vw, 2px);
 }
 
 .excerpt {
@@ -109,10 +149,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--brand-primary, #6366f1);
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary, #6366f1),
+    color-mix(in srgb, var(--brand-primary, #6366f1) 70%, var(--brand-secondary, #8b5cf6))
+  );
   color: #ffffff;
   font-weight: 700;
   font-size: clamp(10px, 1.4vw, 16px);
+  box-shadow: 0 clamp(1px, 0.2vw, 2px) clamp(4px, 0.8vw, 8px) color-mix(in srgb, var(--brand-primary, #6366f1) 25%, transparent);
 }
 
 .author-name {
@@ -140,16 +185,32 @@
   flex: 0 0 38%;
   background: linear-gradient(
     160deg,
-    var(--brand-primary, #6366f1),
-    var(--brand-secondary, #8b5cf6)
+    var(--brand-primary, #6366f1) 0%,
+    color-mix(in srgb, var(--brand-primary, #6366f1) 60%, var(--brand-secondary, #8b5cf6)) 45%,
+    var(--brand-secondary, #8b5cf6) 100%
   );
   overflow: hidden;
+}
+
+/* Dot grid texture on deco panel */
+.deco-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) clamp(1px, 0.15vw, 2px),
+    transparent clamp(1px, 0.15vw, 2px)
+  );
+  background-size: clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 28px);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .deco-circle {
   position: absolute;
   border-radius: 50%;
-  border: clamp(2px, 0.3vw, 4px) solid rgba(255, 255, 255, 0.15);
+  border: clamp(2px, 0.3vw, 4px) solid rgba(255, 255, 255, 0.12);
 }
 
 .deco-circle--large {
@@ -157,6 +218,9 @@
   height: 120%;
   top: -30%;
   right: -40%;
+  box-shadow:
+    inset 0 0 0 clamp(6px, 1vw, 12px) transparent,
+    inset 0 0 0 calc(clamp(6px, 1vw, 12px) + clamp(1px, 0.15vw, 2px)) rgba(255, 255, 255, 0.06);
 }
 
 .deco-circle--small {
@@ -164,7 +228,12 @@
   height: 60%;
   bottom: -10%;
   left: -15%;
-  background: rgba(255, 255, 255, 0.05);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  box-shadow: 0 0 0 clamp(6px, 1vw, 14px) rgba(255, 255, 255, 0.03);
 }
 
 .deco-line {
@@ -175,4 +244,15 @@
   height: clamp(1px, 0.15vw, 2px);
   background: rgba(255, 255, 255, 0.2);
   transform: rotate(-25deg);
+}
+
+/* Second diagonal line */
+.deco-line::after {
+  content: "";
+  position: absolute;
+  top: clamp(-80px, -20vw, -200px);
+  left: 0;
+  width: 100%;
+  height: clamp(1px, 0.15vw, 2px);
+  background: rgba(255, 255, 255, 0.1);
 }

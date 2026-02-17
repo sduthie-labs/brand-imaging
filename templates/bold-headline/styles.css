@@ -18,24 +18,36 @@
   align-items: center;
   justify-content: flex-start;
   background-color: var(--brand-secondary, #1e293b);
-  background-size: cover;
-  background-position: center;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.04) clamp(1px, 0.1vw, 1.5px),
+    transparent clamp(1px, 0.1vw, 1.5px)
+  );
+  background-size: clamp(20px, 3vw, 40px) clamp(20px, 3vw, 40px);
   padding: clamp(24px, 6%, 96px);
   overflow: hidden;
   font-family: var(--font-body, system-ui, -apple-system, sans-serif);
 }
 
-/* Subtle gradient overlay for depth */
+/* Gradient overlay + diagonal hatching for energy */
 .canvas::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent clamp(12px, 2vw, 20px),
+      rgba(255, 255, 255, 0.015) clamp(12px, 2vw, 20px),
+      rgba(255, 255, 255, 0.015) calc(clamp(12px, 2vw, 20px) + 1px)
+    );
   pointer-events: none;
   z-index: 0;
 }
@@ -53,7 +65,7 @@
     var(--brand-primary, #6366f1) 0%,
     transparent 70%
   );
-  opacity: 0.08;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
 }
@@ -70,12 +82,12 @@
   z-index: 0;
 }
 
-/* Accent color strip — left edge */
+/* Accent color strip — left edge with glow */
 .accent-bar {
   position: absolute;
   top: 0;
   left: 0;
-  width: clamp(4px, 0.5%, 6px);
+  width: clamp(5px, 0.6%, 8px);
   height: 100%;
   background: linear-gradient(
     180deg,
@@ -83,9 +95,12 @@
     var(--brand-accent, #f59e0b)
   );
   z-index: 2;
+  box-shadow:
+    clamp(4px, 1vw, 12px) 0 clamp(20px, 4vw, 48px) color-mix(in srgb, var(--brand-primary, #f59e0b) 25%, transparent),
+    clamp(2px, 0.5vw, 6px) 0 clamp(8px, 1.5vw, 16px) color-mix(in srgb, var(--brand-accent, #f59e0b) 15%, transparent);
 }
 
-/* Bottom accent bar */
+/* Bottom accent bar with glow */
 .accent-bar--bottom {
   top: auto;
   bottom: 0;
@@ -98,6 +113,7 @@
     var(--brand-primary, #6366f1) 40%,
     transparent 70%
   );
+  box-shadow: 0 clamp(-4px, -0.8vw, -12px) clamp(20px, 4vw, 50px) color-mix(in srgb, var(--brand-accent, #f59e0b) 20%, transparent);
 }
 
 .content {
@@ -117,6 +133,14 @@
   line-height: 1.05;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  text-shadow:
+    0 0 clamp(40px, 6vw, 80px) color-mix(in srgb, var(--brand-primary, #6366f1) 20%, transparent),
+    clamp(2px, 0.3vw, 4px) clamp(2px, 0.3vw, 4px) 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Accent color on first line of title */
+.title::first-line {
+  color: var(--brand-primary, #f59e0b);
 }
 
 .subtitle {
@@ -144,6 +168,10 @@
   border-radius: clamp(4px, 0.5vw, 8px);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  box-shadow:
+    0 clamp(2px, 0.4vw, 4px) clamp(8px, 1.5vw, 16px) rgba(0, 0, 0, 0.3),
+    inset 0 clamp(1px, 0.15vw, 2px) 0 rgba(255, 255, 255, 0.25),
+    inset 0 calc(-1 * clamp(1px, 0.15vw, 2px)) 0 rgba(0, 0, 0, 0.1);
 }
 
 .logo {
