@@ -1,0 +1,13 @@
+{
+  "title": "Introducing Automated Compliance Reports",
+  "description": "We have built something landlords have been asking for. Automated compliance reports that track every property in your portfolio and flag issues before they become penalties.",
+  "features": [
+    "Automatic EPC expiry tracking across all properties",
+    "Gas Safety Certificate renewal reminders",
+    "Right to Rent check scheduling and logging",
+    "Deposit protection compliance monitoring",
+    "One-click PDF report generation for each property"
+  ],
+  "ctaText": "Try It Now",
+  "ctaUrl": "https://app.landlordshield.biz/reports"
+}

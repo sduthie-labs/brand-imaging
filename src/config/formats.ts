@@ -108,6 +108,8 @@ export const IMAGE_FORMATS: readonly ImageFormat[] = [
   // Email
   fmt('email-header', 'Email Header', 'email', 'email', 600, 200,
     'Header banner for HTML emails'),
+  fmt('email-template', 'Email Template', 'email', 'email', 600, 800,
+    'Full HTML email template (600px wide)'),
 
   // Ads
   fmt('ads-leaderboard', 'Leaderboard Ad', 'ads', 'advertising', 728, 90,

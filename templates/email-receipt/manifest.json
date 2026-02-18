@@ -1,0 +1,22 @@
+{
+  "name": "email-receipt",
+  "description": "Payment confirmation receipt with billing details",
+  "version": "1.0.0",
+  "supportedFormats": ["email-template"],
+  "layoutStrategy": "scale",
+  "tags": ["email", "transactional", "receipt", "payment", "billing"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "tier": { "type": "string", "description": "Subscription tier name" },
+      "amount": { "type": "string", "description": "Payment amount with currency" },
+      "billingPeriod": { "type": "string", "description": "Billing period description" },
+      "paymentMethod": { "type": "string", "description": "Payment method type" },
+      "last4": { "type": "string", "description": "Last 4 digits of card" },
+      "referenceNumber": { "type": "string", "description": "Payment reference number" },
+      "date": { "type": "string", "description": "Payment date" },
+      "manageUrl": { "type": "string", "description": "URL to manage subscription" }
+    },
+    "required": ["tier", "amount", "billingPeriod", "paymentMethod", "last4", "referenceNumber", "date", "manageUrl"]
+  }
+}

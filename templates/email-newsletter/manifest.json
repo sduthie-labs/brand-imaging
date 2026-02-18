@@ -1,0 +1,17 @@
+{
+  "name": "email-newsletter",
+  "description": "Compliance digest newsletter with article cards and compliance tips",
+  "version": "1.0.0",
+  "supportedFormats": ["email-template"],
+  "layoutStrategy": "scale",
+  "tags": ["email", "marketing", "newsletter", "compliance"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "articles": { "type": "array", "description": "Array of article objects with title, excerpt, url, category" },
+      "complianceTip": { "type": "string", "description": "Featured compliance tip text" },
+      "issueNumber": { "type": "number", "description": "Newsletter issue number" }
+    },
+    "required": ["articles", "complianceTip", "issueNumber"]
+  }
+}

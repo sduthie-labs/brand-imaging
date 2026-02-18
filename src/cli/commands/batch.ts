@@ -115,11 +115,14 @@ export const batchCommand: CommandModule<object, BatchArgs> = {
           : config.outputDir;
 
         for (const format of formats) {
+          const jobOutputType = job.outputType ?? config.defaults?.outputType ?? 'png';
+
           const outputPath = generateOutputPath({
             outputDir: jobOutputDir,
             template: templateName,
             format,
             pattern: job.filePattern,
+            outputType: jobOutputType,
           });
 
           const renderJob = createRenderJob({
@@ -130,6 +133,7 @@ export const batchCommand: CommandModule<object, BatchArgs> = {
             outputPath,
             quality: config.defaults?.quality,
             scaleFactor: config.defaults?.scaleFactor,
+            outputType: jobOutputType,
           });
 
           renderJobs.push(renderJob);

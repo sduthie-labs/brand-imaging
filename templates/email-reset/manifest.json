@@ -1,0 +1,17 @@
+{
+  "name": "email-reset",
+  "description": "Password reset email with security copy and expiry notice",
+  "version": "1.0.0",
+  "supportedFormats": ["email-template"],
+  "layoutStrategy": "scale",
+  "tags": ["email", "transactional", "password", "reset", "security"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "resetUrl": { "type": "string", "description": "Password reset URL" },
+      "expiryMinutes": { "type": "number", "description": "Minutes until the reset link expires" },
+      "userName": { "type": "string", "description": "User's name" }
+    },
+    "required": ["resetUrl", "expiryMinutes", "userName"]
+  }
+}

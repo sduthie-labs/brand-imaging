@@ -1,0 +1,16 @@
+{
+  "name": "email-welcome",
+  "description": "Welcome email for new users with feature highlights and dashboard CTA",
+  "version": "1.0.0",
+  "supportedFormats": ["email-template"],
+  "layoutStrategy": "scale",
+  "tags": ["email", "marketing", "welcome", "onboarding"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "userName": { "type": "string", "description": "New user's name" },
+      "dashboardUrl": { "type": "string", "description": "URL to the user dashboard" }
+    },
+    "required": ["userName", "dashboardUrl"]
+  }
+}

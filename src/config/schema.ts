@@ -7,6 +7,7 @@ const brandFontSchema = z.object({
   weight: z.union([z.number(), z.string()]).optional(),
   style: z.string().optional(),
   localFile: z.string().optional(),
+  source: z.string().optional(),
 });
 
 // Brand kit schema matching the BrandKit type
@@ -63,6 +64,7 @@ export const batchConfigSchema = z.object({
       data: z.record(z.unknown()),
       outputDir: z.string().optional(),
       filePattern: z.string().optional(),
+      outputType: z.enum(['png', 'html']).optional(),
     }),
   ),
   outputDir: z.string(),
@@ -74,6 +76,7 @@ export const batchConfigSchema = z.object({
       formats: z.array(z.string()).optional(),
       quality: z.number().min(1).max(100).optional(),
       scaleFactor: z.number().positive().optional(),
+      outputType: z.enum(['png', 'html']).optional(),
     })
     .optional(),
 });

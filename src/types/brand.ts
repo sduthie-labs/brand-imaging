@@ -15,6 +15,8 @@ export interface BrandFont {
   style?: string;
   /** Path to a local woff2 file */
   localFile?: string;
+  /** URL to a web font source (e.g. Google Fonts) for email templates */
+  source?: string;
 }
 
 export interface BrandTypography {

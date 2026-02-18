@@ -10,6 +10,7 @@ export interface BatchConfig {
     formats?: string[];
     quality?: number;
     scaleFactor?: number;
+    outputType?: 'png' | 'html';
   };
 }
 
@@ -20,6 +21,7 @@ export interface BatchJobConfig {
   outputDir?: string;
   /** Output filename pattern, e.g. '{template}-{format}-{date}' */
   filePattern?: string;
+  outputType?: 'png' | 'html';
 }
 
 export interface BatchResult {

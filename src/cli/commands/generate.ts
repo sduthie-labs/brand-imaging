@@ -4,13 +4,14 @@ import chalk from 'chalk';
 import ora from 'ora';
 import type { CommandModule } from 'yargs';
 import { Renderer } from '../../core/renderer.js';
+import { EmailRenderer } from '../../core/email-renderer.js';
 import { TemplateEngine } from '../../core/template-engine.js';
 import { formatRegistry } from '../../core/format-registry.js';
 import { loadBrandKit } from '../../config/brand-kit.js';
 import { generateOutputPath, prepareOutputDir } from '../../pipeline/output-writer.js';
 import { DEFAULTS } from '../../config/defaults.js';
 import { resolveTemplatePath } from '../../utils/fs.js';
-import type { ImageFormat, TemplateData } from '../../types/index.js';
+import type { ImageFormat, TemplateData, OutputType } from '../../types/index.js';
 import type { BrandKit } from '../../types/brand.js';
 
 interface GenerateArgs {
@@ -21,6 +22,7 @@ interface GenerateArgs {
   output?: string;
   quality?: number;
   'scale-factor'?: number;
+  'output-type'?: OutputType;
 }
 
 async function parseData(dataArg: string | undefined): Promise<TemplateData> {
@@ -93,6 +95,12 @@ export const generateCommand: CommandModule<object, GenerateArgs> = {
         type: 'number',
         description: 'Device scale factor for rendering',
         default: DEFAULTS.scaleFactor,
+      })
+      .option('output-type', {
+        type: 'string',
+        description: 'Output type: png (screenshot) or html (email template)',
+        choices: ['png', 'html'] as const,
+        default: 'png' as OutputType,
       }),
   handler: async (argv) => {
     const startTime = performance.now();
@@ -172,11 +180,22 @@ export const generateCommand: CommandModule<object, GenerateArgs> = {
       const outputDir = resolve(argv.output ?? DEFAULTS.outputDir);
       await prepareOutputDir(outputDir);
 
+      const outputType = argv['output-type'] ?? 'png';
+      const isHtml = outputType === 'html';
+
       // Initialize renderer
-      const renderSpinner = ora('Initializing renderer...').start();
-      const renderer = new Renderer();
-      await renderer.initialize();
-      renderSpinner.succeed('Renderer initialized');
+      let renderer: Renderer | undefined;
+      let emailRenderer: EmailRenderer | undefined;
+      if (isHtml) {
+        emailRenderer = new EmailRenderer();
+        const renderSpinner = ora('Email renderer ready').start();
+        renderSpinner.succeed('Email renderer ready');
+      } else {
+        const renderSpinner = ora('Initializing renderer...').start();
+        renderer = new Renderer();
+        await renderer.initialize();
+        renderSpinner.succeed('Renderer initialized');
+      }
 
       // Derive template name for output filenames
       const templateName = basename(resolve(argv.template));
@@ -194,28 +213,39 @@ export const generateCommand: CommandModule<object, GenerateArgs> = {
         ).start();
 
         try {
-          const html = templateEngine.compile(
-            template,
-            data,
-            format,
-            brandKit,
-          );
-
           const outputPath = generateOutputPath({
             outputDir,
             template: templateName,
             format,
+            outputType,
           });
 
-          const result = await renderer.renderToFile(
-            html,
-            format,
-            outputPath,
-            {
-              quality: argv.quality,
-              scaleFactor: argv['scale-factor'],
-            },
-          );
+          let result;
+          if (isHtml) {
+            const html = templateEngine.compileEmail(
+              template,
+              data,
+              format,
+              brandKit,
+            );
+            result = await emailRenderer!.renderToFile(html, format, outputPath);
+          } else {
+            const html = templateEngine.compile(
+              template,
+              data,
+              format,
+              brandKit,
+            );
+            result = await renderer!.renderToFile(
+              html,
+              format,
+              outputPath,
+              {
+                quality: argv.quality,
+                scaleFactor: argv['scale-factor'],
+              },
+            );
+          }
 
           results.push({
             format,
@@ -234,14 +264,17 @@ export const generateCommand: CommandModule<object, GenerateArgs> = {
       }
 
       // Cleanup
-      await renderer.close();
+      if (renderer) {
+        await renderer.close();
+      }
 
       // Summary
       const totalMs = performance.now() - startTime;
+      const outputLabel = isHtml ? 'email templates' : 'images';
       console.log('');
       console.log(
         chalk.green.bold(
-          `Generated ${results.length}/${formats.length} images in ${(totalMs / 1000).toFixed(2)}s`,
+          `Generated ${results.length}/${formats.length} ${outputLabel} in ${(totalMs / 1000).toFixed(2)}s`,
         ),
       );
 

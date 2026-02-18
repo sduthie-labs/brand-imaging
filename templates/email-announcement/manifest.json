@@ -1,0 +1,19 @@
+{
+  "name": "email-announcement",
+  "description": "Product update announcement with feature list and CTA",
+  "version": "1.0.0",
+  "supportedFormats": ["email-template"],
+  "layoutStrategy": "scale",
+  "tags": ["email", "marketing", "announcement", "product"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string", "description": "Announcement title" },
+      "description": { "type": "string", "description": "Announcement body text" },
+      "features": { "type": "array", "description": "Array of feature strings" },
+      "ctaText": { "type": "string", "description": "CTA button text" },
+      "ctaUrl": { "type": "string", "description": "CTA button URL" }
+    },
+    "required": ["title", "description", "features", "ctaText", "ctaUrl"]
+  }
+}

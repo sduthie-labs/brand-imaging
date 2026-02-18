@@ -1,4 +1,4 @@
-import type { RenderJob, ImageFormat, TemplateData } from '../types/index.js';
+import type { RenderJob, ImageFormat, TemplateData, OutputType } from '../types/index.js';
 
 export function createRenderJob(params: {
   template: string;
@@ -8,6 +8,7 @@ export function createRenderJob(params: {
   outputPath?: string;
   quality?: number;
   scaleFactor?: number;
+  outputType?: OutputType;
 }): RenderJob {
   return { ...params };
 }

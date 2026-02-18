@@ -103,4 +103,35 @@ describe('generateOutputPath', () => {
     });
     expect(path).toMatch(/\.png$/);
   });
+
+  it('appends .html extension when outputType is html', () => {
+    const path = generateOutputPath({
+      outputDir: '/out',
+      template: 'email-welcome',
+      format: ogFormat,
+      outputType: 'html',
+    });
+    expect(path).toMatch(/\.html$/);
+    expect(path).toContain('email-welcome-og.html');
+  });
+
+  it('appends .png extension when outputType is png', () => {
+    const path = generateOutputPath({
+      outputDir: '/out',
+      template: 'minimal',
+      format: ogFormat,
+      outputType: 'png',
+    });
+    expect(path).toMatch(/\.png$/);
+  });
+
+  it('defaults to .png when outputType is not specified', () => {
+    const path = generateOutputPath({
+      outputDir: '/out',
+      template: 'minimal',
+      format: ogFormat,
+    });
+    expect(path).toMatch(/\.png$/);
+    expect(path).not.toMatch(/\.html$/);
+  });
 });

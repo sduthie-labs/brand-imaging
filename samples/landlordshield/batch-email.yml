@@ -1,0 +1,86 @@
+brandKit: ../../brand-kits/landlordshield
+outputDir: ./email
+
+defaults:
+  outputType: html
+
+jobs:
+  # --- WELCOME EMAIL ---
+  - template: email-welcome
+    formats:
+      - email-template
+    data:
+      userName: "Sarah"
+      dashboardUrl: "https://app.landlordshield.biz/dashboard"
+
+  # --- NEWSLETTER ---
+  - template: email-newsletter
+    formats:
+      - email-template
+    data:
+      issueNumber: 12
+      articles:
+        - title: "Renters Rights Act: Key Dates for 2025"
+          excerpt: "New compliance deadlines are approaching. Here is what every landlord needs to know about the upcoming changes."
+          url: "https://landlordshield.biz/blog/renters-rights-key-dates"
+          category: "Legislation"
+        - title: "EPC Requirements Tightening in April"
+          excerpt: "Energy Performance Certificate standards are changing. Find out if your properties meet the new minimum rating."
+          url: "https://landlordshield.biz/blog/epc-requirements"
+          category: "Compliance"
+        - title: "Section 21 Notice: Complete Guide"
+          excerpt: "Everything you need to know about serving a valid Section 21 notice under the current rules."
+          url: "https://landlordshield.biz/blog/section-21-guide"
+          category: "Legal Guide"
+      complianceTip: "Always serve notices using recorded delivery and keep proof of postage. Digital notices may not be legally valid in all jurisdictions."
+
+  # --- PRODUCT ANNOUNCEMENT ---
+  - template: email-announcement
+    formats:
+      - email-template
+    data:
+      title: "Introducing Automated Compliance Reports"
+      description: "We have built something landlords have been asking for. Automated compliance reports that track every property in your portfolio and flag issues before they become penalties."
+      features:
+        - "Automatic EPC expiry tracking across all properties"
+        - "Gas Safety Certificate renewal reminders"
+        - "Right to Rent check scheduling and logging"
+        - "Deposit protection compliance monitoring"
+        - "One-click PDF report generation for each property"
+      ctaText: "Try It Now"
+      ctaUrl: "https://app.landlordshield.biz/reports"
+
+  # --- COMPLIANCE ALERT ---
+  - template: email-alert
+    formats:
+      - email-template
+    data:
+      propertyAddress: "14 Elmwood Terrace, Manchester, M20 3BL"
+      deadlineDate: "15 March 2025"
+      daysRemaining: 12
+      complianceType: "Gas Safety Certificate"
+      actionRequired: "Your Gas Safety Certificate expires on 15 March 2025. You must arrange a Gas Safe registered engineer inspection and obtain a new certificate before this date to remain legally compliant."
+      dashboardUrl: "https://app.landlordshield.biz/properties/14-elmwood"
+
+  # --- PAYMENT RECEIPT ---
+  - template: email-receipt
+    formats:
+      - email-template
+    data:
+      tier: "Professional"
+      amount: "\u00A329.00"
+      billingPeriod: "Monthly (Feb 2025)"
+      paymentMethod: "Visa"
+      last4: "4242"
+      referenceNumber: "LS-2025-00847"
+      date: "1 February 2025"
+      manageUrl: "https://app.landlordshield.biz/billing"
+
+  # --- PASSWORD RESET ---
+  - template: email-reset
+    formats:
+      - email-template
+    data:
+      resetUrl: "https://app.landlordshield.biz/reset?token=abc123def456"
+      expiryMinutes: 30
+      userName: "Sarah"

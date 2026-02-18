@@ -1,6 +1,9 @@
 export { Renderer } from './core/renderer.js';
 export type { RendererOptions } from './core/renderer.js';
 
+export { EmailRenderer } from './core/email-renderer.js';
+export type { EmailRendererOptions } from './core/email-renderer.js';
+
 export { BrowserPool } from './core/browser-pool.js';
 export type { BrowserPoolOptions } from './core/browser-pool.js';
 

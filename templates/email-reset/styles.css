@@ -1,0 +1,93 @@
+/* --------------------------------------------------------------------------
+   Email Reset Template — Dark-themed password reset transactional email
+   -------------------------------------------------------------------------- */
+
+/* Email resets */
+body,
+table,
+td,
+a {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+table,
+td {
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Brand typography classes */
+.brand-heading {
+  font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brand-body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 600px) {
+  .email-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .content-padding {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .hero-heading {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-subtext {
+    font-size: 15px !important;
+  }
+
+  .cta-button {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .cta-button a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .security-box {
+    padding: 16px !important;
+  }
+
+  .icon-cell {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .icon-text {
+    font-size: 26px !important;
+  }
+}

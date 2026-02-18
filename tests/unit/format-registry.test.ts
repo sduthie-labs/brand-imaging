@@ -11,7 +11,7 @@ describe('FormatRegistry', () => {
   describe('getAll', () => {
     it('returns exactly 22 formats', () => {
       const all = registry.getAll();
-      expect(all).toHaveLength(22);
+      expect(all).toHaveLength(25);
     });
   });
 
@@ -63,9 +63,9 @@ describe('FormatRegistry', () => {
   // ---------------------------------------------------------------------------
 
   describe('getByCategory', () => {
-    it('returns 15 formats for "social"', () => {
+    it('returns 17 formats for "social"', () => {
       const social = registry.getByCategory('social');
-      expect(social).toHaveLength(15);
+      expect(social).toHaveLength(17);
       social.forEach((f) => {
         expect(f.category).toBe('social');
       });
@@ -122,7 +122,7 @@ describe('FormatRegistry', () => {
 
     it('parses "all" into all 22 formats', () => {
       const formats = registry.parseFormatList('all');
-      expect(formats).toHaveLength(22);
+      expect(formats).toHaveLength(25);
     });
 
     it('parses "twitter" as a platform and returns all 3 twitter formats', () => {
@@ -135,7 +135,7 @@ describe('FormatRegistry', () => {
 
     it('parses "*" into all formats', () => {
       const formats = registry.parseFormatList('*');
-      expect(formats).toHaveLength(22);
+      expect(formats).toHaveLength(25);
     });
   });
 

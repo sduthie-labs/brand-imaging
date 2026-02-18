@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+  <title>Compliance Deadline Approaching</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Email resets */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; background-color: #0a0f18; }
+
+    @media only screen and (max-width: 600px) {
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .content-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      .hero-heading { font-size: 24px !important; line-height: 1.2 !important; }
+      .hero-subtext { font-size: 14px !important; }
+      .days-number { font-size: 36px !important; }
+      .detail-label { font-size: 11px !important; }
+      .detail-value { font-size: 14px !important; }
+      .cta-button { width: 100% !important; display: block !important; }
+      .cta-button a { display: block !important; width: 100% !important; }
+      .property-card { padding: 20px 16px !important; }
+      .action-card { padding: 20px 16px !important; }
+      .urgency-badge { font-size: 11px !important; padding: 6px 16px !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #0a0f18; width: 100% !important;">
+
+  <!-- Preheader — Hidden text shown in email client previews -->
+  <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all; font-size: 1px; line-height: 1px; color: #0a0f18;">
+    Urgent: Your {{complianceType}} deadline for {{propertyAddress}} is in {{daysRemaining}} days. Action required before {{deadlineDate}}.
+    &#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;
+  </div>
+
+  <!-- Full-width background wrapper -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #0a0f18;">
+    <tr>
+      <td align="center" style="padding: 0;">
+
+        <!-- Main container — 600px max -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width: 600px; width: 100%; margin: 0 auto;">
+
+          <!-- ============================================
+               LOGO / HEADER AREA
+               ============================================ -->
+          <tr>
+            <td align="center" style="padding: 40px 40px 24px 40px;" class="content-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 22px; font-weight: 700; color: #e2e8f0; letter-spacing: -0.02em;">
+                    <!-- Shield icon (Unicode) + Brand name -->
+                    <span style="color: #4fd1c5; font-size: 26px;">&#x1F6E1;</span>
+                    &nbsp;LandlordShield
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               URGENCY BADGE
+               ============================================ -->
+          <tr>
+            <td align="center" style="padding: 0 40px 20px 40px;" class="content-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="urgency-badge" style="background-color: #f6ad55; color: #0a0f18; font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 24px; border-radius: 20px; text-align: center;">
+                    &#9888; URGENT &mdash; {{daysRemaining}} DAYS REMAINING
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               MAIN HEADING
+               ============================================ -->
+          <tr>
+            <td align="center" style="padding: 0 40px 8px 40px;" class="content-padding">
+              <h1 class="hero-heading" style="margin: 0; font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; font-weight: 700; color: #e2e8f0; line-height: 1.25; letter-spacing: -0.02em; text-align: center;">
+                Compliance Deadline Approaching
+              </h1>
+            </td>
+          </tr>
+
+          <!-- Sub-heading text -->
+          <tr>
+            <td align="center" style="padding: 0 40px 32px 40px;" class="content-padding">
+              <p class="hero-subtext" style="margin: 0; font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 400; color: #94a3b8; line-height: 1.6; text-align: center;">
+                A compliance deadline for one of your properties requires your immediate attention.
+              </p>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               PROPERTY DETAILS CARD
+               ============================================ -->
+          <tr>
+            <td style="padding: 0 40px 24px 40px;" class="content-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="property-card" style="background-color: #1c2a3a; border-radius: 12px; border: 1px solid #2d3f52;">
+                <tr>
+                  <td style="padding: 28px 28px 0 28px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+
+                      <!-- Property Address row -->
+                      <tr>
+                        <td style="padding-bottom: 20px; border-bottom: 1px solid #2d3f52;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 6px;" class="detail-label">
+                                Property
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 600; color: #e2e8f0; line-height: 1.4;" class="detail-value">
+                                {{propertyAddress}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <!-- Compliance Type row -->
+                      <tr>
+                        <td style="padding-top: 20px; padding-bottom: 20px; border-bottom: 1px solid #2d3f52;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 6px;" class="detail-label">
+                                Compliance Type
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 600; color: #4fd1c5; line-height: 1.4;" class="detail-value">
+                                {{complianceType}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <!-- Deadline Date + Days Remaining row (side by side) -->
+                      <tr>
+                        <td style="padding-top: 20px; padding-bottom: 28px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <!-- Deadline Date -->
+                              <td width="55%" valign="top">
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                  <tr>
+                                    <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 6px;" class="detail-label">
+                                      Deadline Date
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 600; color: #e2e8f0; line-height: 1.4;" class="detail-value">
+                                      {{deadlineDate}}
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <!-- Days Remaining — Large highlighted number -->
+                              <td width="45%" valign="top" align="right">
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                  <tr>
+                                    <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 2px; text-align: right;" class="detail-label">
+                                      Days Remaining
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right">
+                                      <span class="days-number" style="font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 48px; font-weight: 700; color: #f6ad55; line-height: 1; letter-spacing: -0.03em;">{{daysRemaining}}</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               ACTION REQUIRED CARD
+               ============================================ -->
+          <tr>
+            <td style="padding: 0 40px 32px 40px;" class="content-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="action-card" style="background-color: #111827; border-radius: 12px; border-left: 4px solid #f6ad55;">
+                <tr>
+                  <td style="padding: 24px 28px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tr>
+                        <td style="font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; font-weight: 700; color: #f6ad55; text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 10px;">
+                          Action Required
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; font-weight: 400; color: #e2e8f0; line-height: 1.7;">
+                          {{actionRequired}}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               CTA BUTTON
+               ============================================ -->
+          <tr>
+            <td align="center" style="padding: 0 40px 40px 40px;" class="content-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="cta-button">
+                <tr>
+                  <td align="center" style="border-radius: 8px; background-color: #4fd1c5;">
+                    <a href="{{dashboardUrl}}" target="_blank" style="display: inline-block; font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 700; color: #0a0f18; text-decoration: none; padding: 16px 48px; border-radius: 8px; letter-spacing: 0.02em;">
+                      View in Dashboard &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               DIVIDER
+               ============================================ -->
+          <tr>
+            <td style="padding: 0 40px;" class="content-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td style="border-top: 1px solid #2d3f52; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               FOOTER
+               ============================================ -->
+          <tr>
+            <td align="center" style="padding: 32px 40px 48px 40px;" class="content-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; font-weight: 400; color: #94a3b8; line-height: 1.6; text-align: center;">
+                    This is an automated alert from LandlordShield.<br>
+                    You are receiving this because you have active compliance tracking<br>
+                    enabled for your properties.
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top: 16px; font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; font-weight: 400; color: #64748b; line-height: 1.5; text-align: center;">
+                    <a href="{{dashboardUrl}}" style="color: #4fd1c5; text-decoration: underline;">Manage notification preferences</a>
+                    &nbsp;&bull;&nbsp;
+                    <a href="{{dashboardUrl}}" style="color: #4fd1c5; text-decoration: underline;">View all properties</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top: 20px; font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 11px; font-weight: 400; color: #475569; line-height: 1.5; text-align: center;">
+                    &copy; {{currentYear}} LandlordShield &mdash; landlordshield.biz
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Main container -->
+
+      </td>
+    </tr>
+  </table>
+  <!-- /Full-width background wrapper -->
+
+</body>
+</html>

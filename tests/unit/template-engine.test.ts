@@ -142,6 +142,95 @@ describe('TemplateEngine', () => {
   });
 
   // ---------------------------------------------------------------------------
+  // compileEmail
+  // ---------------------------------------------------------------------------
+
+  describe('compileEmail', () => {
+    it('produces XHTML transitional doctype', async () => {
+      const compiled = await engine.loadTemplate(MINIMAL_DIR);
+      const html = engine.compileEmail(
+        compiled,
+        { title: 'Email Test' },
+        ogFormat,
+      );
+      expect(html).toContain('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"');
+      expect(html).toContain('xmlns="http://www.w3.org/1999/xhtml"');
+    });
+
+    it('does not contain CSS custom properties', async () => {
+      const compiled = await engine.loadTemplate(MINIMAL_DIR);
+      const html = engine.compileEmail(
+        compiled,
+        { title: 'Email Test' },
+        ogFormat,
+        sampleBrandKit,
+      );
+      // Email output should use class-based CSS, not custom properties
+      expect(html).not.toContain('--brand-primary:');
+      expect(html).not.toContain('--font-heading:');
+      expect(html).not.toContain('--canvas-width:');
+    });
+
+    it('includes brand class selectors when brand kit is provided', async () => {
+      const compiled = await engine.loadTemplate(MINIMAL_DIR);
+      const html = engine.compileEmail(
+        compiled,
+        { title: 'Brand Email' },
+        ogFormat,
+        sampleBrandKit,
+      );
+      expect(html).toContain('.brand-heading');
+      expect(html).toContain('.brand-body');
+      expect(html).toContain('#6366f1'); // primary color
+    });
+
+    it('includes MSO conditional comments', async () => {
+      const compiled = await engine.loadTemplate(MINIMAL_DIR);
+      const html = engine.compileEmail(
+        compiled,
+        { title: 'MSO Test' },
+        ogFormat,
+      );
+      expect(html).toContain('<!--[if mso]>');
+      expect(html).toContain('<![endif]-->');
+    });
+
+    it('includes email reset CSS', async () => {
+      const compiled = await engine.loadTemplate(MINIMAL_DIR);
+      const html = engine.compileEmail(
+        compiled,
+        { title: 'Reset CSS Test' },
+        ogFormat,
+      );
+      expect(html).toContain('-webkit-text-size-adjust');
+      expect(html).toContain('mso-table-lspace');
+    });
+
+    it('includes responsive media queries', async () => {
+      const compiled = await engine.loadTemplate(MINIMAL_DIR);
+      const html = engine.compileEmail(
+        compiled,
+        { title: 'Responsive Test' },
+        ogFormat,
+      );
+      expect(html).toContain('@media only screen and (max-width: 620px)');
+      expect(html).toContain('.email-container');
+    });
+
+    it('includes Google Fonts link when brand kit has fonts', async () => {
+      const compiled = await engine.loadTemplate(MINIMAL_DIR);
+      const html = engine.compileEmail(
+        compiled,
+        { title: 'Font Test' },
+        ogFormat,
+        sampleBrandKit,
+      );
+      expect(html).toContain('fonts.googleapis.com');
+      expect(html).toContain('Inter');
+    });
+  });
+
+  // ---------------------------------------------------------------------------
   // Handlebars helpers
   // ---------------------------------------------------------------------------
 

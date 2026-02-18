@@ -198,6 +198,123 @@ export class TemplateEngine {
 </html>`;
   }
 
+  compileEmail(
+    template: CompiledTemplate,
+    data: TemplateData,
+    format: ImageFormat,
+    brandKit?: BrandKit,
+  ): string {
+    const compiledTemplate = this.handlebars.compile(template.html);
+
+    const templateData: TemplateData = {
+      ...data,
+      format: {
+        id: format.id,
+        name: format.name,
+        width: format.width,
+        height: format.height,
+        platform: format.platform,
+      },
+      brand: brandKit
+        ? {
+            name: brandKit.name,
+            colors: brandKit.colors,
+            typography: brandKit.typography,
+            logos: brandKit.logos,
+          }
+        : undefined,
+    };
+
+    const body = compiledTemplate(templateData);
+
+    const emailResetCss = this.generateEmailResetCss();
+    const emailBrandCss = brandKit ? this.generateEmailBrandCss(brandKit) : '';
+
+    // Build Google Fonts link tags
+    const fontLinks: string[] = [];
+    if (brandKit) {
+      const families: string[] = [];
+      for (const role of ['heading', 'body', 'accent'] as const) {
+        const font = brandKit.typography[role];
+        if (font) {
+          const weight = font.weight ?? (role === 'heading' ? 700 : 400);
+          families.push(`${font.family.replace(/ /g, '+')}:wght@${weight}`);
+        }
+      }
+      if (families.length > 0) {
+        const uniqueFamilies = [...new Set(families)];
+        fontLinks.push(
+          `<link href="https://fonts.googleapis.com/css2?${uniqueFamilies.map((f) => `family=${f}`).join('&')}&display=swap" rel="stylesheet">`,
+        );
+      }
+    }
+
+    return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <title></title>
+  ${fontLinks.join('\n  ')}
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    ${emailResetCss}
+    ${emailBrandCss}
+    ${template.css}
+  </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+  ${body}
+</body>
+</html>`;
+  }
+
+  private generateEmailResetCss(): string {
+    return `/* Email resets */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+    @media only screen and (max-width: 620px) {
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .fluid { max-width: 100% !important; height: auto !important; }
+      .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; }
+      .stack-column-center { text-align: center !important; }
+      .center-on-narrow { text-align: center !important; display: block !important; margin-left: auto !important; margin-right: auto !important; float: none !important; }
+      table.center-on-narrow { display: inline-block !important; }
+      .hide-on-mobile { display: none !important; }
+    }`;
+  }
+
+  private generateEmailBrandCss(brandKit: BrandKit): string {
+    const heading = brandKit.typography.heading;
+    const body = brandKit.typography.body;
+    const lines: string[] = [];
+
+    lines.push(`.brand-heading { font-family: '${heading.family}', ${heading.fallback}; font-weight: ${heading.weight ?? 700}; color: ${brandKit.colors.text}; }`);
+    lines.push(`.brand-body { font-family: '${body.family}', ${body.fallback}; font-weight: ${body.weight ?? 400}; color: ${brandKit.colors.text}; }`);
+    lines.push(`.brand-bg-primary { background-color: ${brandKit.colors.primary}; }`);
+    lines.push(`.brand-bg-secondary { background-color: ${brandKit.colors.secondary}; }`);
+    lines.push(`.brand-bg-accent { background-color: ${brandKit.colors.accent}; }`);
+    lines.push(`.brand-bg-background { background-color: ${brandKit.colors.background}; }`);
+    lines.push(`.brand-text-primary { color: ${brandKit.colors.primary}; }`);
+    lines.push(`.brand-text-secondary { color: ${brandKit.colors.secondary}; }`);
+    lines.push(`.brand-text-accent { color: ${brandKit.colors.accent}; }`);
+
+    return lines.join('\n    ');
+  }
+
   private generateBrandCss(brandKit: BrandKit): string {
     const lines: string[] = [];
 

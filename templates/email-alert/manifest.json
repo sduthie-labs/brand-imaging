@@ -1,0 +1,20 @@
+{
+  "name": "email-alert",
+  "description": "Compliance deadline warning with urgency badge and property details",
+  "version": "1.0.0",
+  "supportedFormats": ["email-template"],
+  "layoutStrategy": "scale",
+  "tags": ["email", "transactional", "alert", "deadline", "compliance"],
+  "dataSchema": {
+    "type": "object",
+    "properties": {
+      "propertyAddress": { "type": "string", "description": "Property address" },
+      "deadlineDate": { "type": "string", "description": "Formatted deadline date" },
+      "daysRemaining": { "type": "number", "description": "Days until deadline" },
+      "complianceType": { "type": "string", "description": "Type of compliance (e.g. Gas Safety, EPC)" },
+      "actionRequired": { "type": "string", "description": "Description of action needed" },
+      "dashboardUrl": { "type": "string", "description": "URL to the dashboard" }
+    },
+    "required": ["propertyAddress", "deadlineDate", "daysRemaining", "complianceType", "actionRequired", "dashboardUrl"]
+  }
+}

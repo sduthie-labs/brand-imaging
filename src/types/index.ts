@@ -9,6 +9,7 @@ export type {
 } from './brand.js';
 
 export type {
+  OutputType,
   LayoutStrategy,
   TemplateManifest,
   TemplateData,

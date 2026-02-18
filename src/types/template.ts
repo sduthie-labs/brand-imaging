@@ -1,5 +1,7 @@
 import type { ImageFormat } from './format.js';
 
+export type OutputType = 'png' | 'html';
+
 export type LayoutStrategy = 'scale' | 'adaptive' | 'per-format';
 
 export interface TemplateManifest {
@@ -39,6 +41,7 @@ export interface RenderJob {
   outputPath?: string;
   quality?: number;
   scaleFactor?: number;
+  outputType?: OutputType;
 }
 
 export interface RenderResult {
@@ -49,4 +52,7 @@ export interface RenderResult {
   outputPath?: string;
   /** Time taken to render in milliseconds */
   durationMs: number;
+  /** The compiled HTML string (present when outputType is 'html') */
+  html?: string;
+  outputType?: OutputType;
 }

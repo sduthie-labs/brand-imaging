@@ -1,0 +1,154 @@
+/* --------------------------------------------------------------------------
+   Email Announcement Template — Dark theme product update email
+   Minimal CSS: email resets + mobile responsive overrides
+   All primary styling is inline on table elements for email client compat.
+   -------------------------------------------------------------------------- */
+
+/* Email client resets */
+body,
+#bodyTable {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+table td {
+  border-collapse: collapse;
+}
+
+img {
+  border: 0;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Outlook link color fix */
+.ExternalClass {
+  width: 100%;
+}
+
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+  line-height: 100%;
+}
+
+/* Preheader hide */
+.preheader {
+  display: none !important;
+  visibility: hidden;
+  mso-hide: all;
+  font-size: 1px;
+  line-height: 1px;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Responsive — max-width 600px
+   -------------------------------------------------------------------------- */
+@media only screen and (max-width: 600px) {
+  /* Force single-column layout */
+  .email-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .inner-container {
+    width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Scale down heading */
+  .announcement-title {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+
+  /* Scale down body text */
+  .announcement-desc {
+    font-size: 15px !important;
+    line-height: 24px !important;
+  }
+
+  /* CTA button full width on mobile */
+  .cta-button {
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .cta-button a {
+    display: block !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Feature rows padding */
+  .feature-row td {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Badge */
+  .badge-cell {
+    padding-top: 24px !important;
+  }
+
+  /* Footer text */
+  .footer-text {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+
+  /* Card padding on mobile */
+  .card-cell {
+    padding: 24px 20px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode support for email clients that respect it
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  .email-bg {
+    background-color: #0a0f18 !important;
+  }
+
+  .email-container-bg {
+    background-color: #111827 !important;
+  }
+
+  .card-bg {
+    background-color: #1c2a3a !important;
+  }
+}

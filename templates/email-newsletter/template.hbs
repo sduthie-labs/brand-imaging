@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>Compliance Digest #{{issueNumber}} — {{brand.name}}</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+  </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100%; height: 100%; background-color: #0a0f18; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+
+  <!-- Preheader text (hidden, shows in email client preview) -->
+  <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;" aria-hidden="true">
+    Your compliance digest is here — Issue #{{issueNumber}} with the latest landlord regulations, compliance tips, and legal updates from {{brand.name}}.
+    &#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;
+  </div>
+
+  <!-- Outer wrapper table — full-width background -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #0a0f18;">
+    <tr>
+      <td align="center" style="padding: 24px 16px;">
+
+        <!-- Email container — 600px max width -->
+        <table role="presentation" class="email-container" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 100%; background-color: #111827; border-radius: 12px; overflow: hidden; border: 1px solid #1e293b;">
+
+          <!-- ============================================
+               HEADER — Logo + Issue Title
+               ============================================ -->
+          <tr>
+            <td class="header-cell" align="center" style="padding: 40px 32px 32px 32px; background: linear-gradient(180deg, #162033 0%, #111827 100%); border-bottom: 1px solid #1e293b;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <!-- Logo row -->
+                {{#if brand.logos.primary}}
+                <tr>
+                  <td align="center" style="padding-bottom: 20px;">
+                    <img src="{{brand.logos.primary}}" alt="{{brand.name}}" width="160" style="display: block; width: 160px; max-width: 100%; height: auto;">
+                  </td>
+                </tr>
+                {{/if}}
+                <!-- Divider accent line -->
+                <tr>
+                  <td align="center" style="padding-bottom: 20px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="width: 48px; height: 3px; background-color: {{brand.colors.primary}}; border-radius: 2px;"></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Title -->
+                <tr>
+                  <td align="center">
+                    <h1 class="header-title brand-heading" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 26px; font-weight: 700; color: #e2e8f0; letter-spacing: -0.01em; line-height: 1.2;">
+                      Compliance Digest #{{issueNumber}}
+                    </h1>
+                  </td>
+                </tr>
+                <!-- Subtitle -->
+                <tr>
+                  <td align="center" style="padding-top: 8px;">
+                    <p class="header-subtitle brand-body" style="margin: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 400; color: #94a3b8; line-height: 1.5;">
+                      The latest compliance updates for landlords
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               ARTICLES SECTION
+               ============================================ -->
+          <tr>
+            <td style="padding: 32px 24px 8px 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <!-- Section label -->
+                <tr>
+                  <td style="padding-bottom: 20px;">
+                    <p style="margin: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 600; color: {{brand.colors.primary}}; text-transform: uppercase; letter-spacing: 0.1em;">
+                      Latest Articles
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          {{#each articles}}
+          <!-- Article Card: {{this.title}} -->
+          <tr>
+            <td style="padding: 0 24px 16px 24px;">
+              <table role="presentation" class="article-card" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #1c2a3a; border-radius: 10px; border: 1px solid #263549; overflow: hidden;">
+                <tr>
+                  <td style="padding: 24px 24px 20px 24px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <!-- Category badge -->
+                      <tr>
+                        <td style="padding-bottom: 12px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td class="category-badge" style="background-color: rgba(79, 209, 197, 0.12); padding: 4px 12px; border-radius: 4px; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #4fd1c5; text-transform: uppercase; letter-spacing: 0.05em;">
+                                {{this.category}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <!-- Article title -->
+                      <tr>
+                        <td>
+                          <h2 class="article-title brand-heading" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 20px; font-weight: 700; color: #e2e8f0; line-height: 1.3; letter-spacing: -0.01em;">
+                            {{this.title}}
+                          </h2>
+                        </td>
+                      </tr>
+                      <!-- Excerpt -->
+                      <tr>
+                        <td style="padding-top: 8px;">
+                          <p class="article-excerpt brand-body" style="margin: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 400; color: #94a3b8; line-height: 1.6;">
+                            {{this.excerpt}}
+                          </p>
+                        </td>
+                      </tr>
+                      <!-- Read More CTA -->
+                      <tr>
+                        <td style="padding-top: 16px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td style="border-radius: 6px; background-color: rgba(79, 209, 197, 0.1); border: 1px solid rgba(79, 209, 197, 0.25);">
+                                <a class="cta-link" href="{{this.url}}" target="_blank" style="display: inline-block; padding: 10px 22px; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 600; color: #4fd1c5; text-decoration: none; letter-spacing: 0.02em;">
+                                  Read More &#8594;
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          {{/each}}
+
+          <!-- ============================================
+               COMPLIANCE TIP SECTION
+               ============================================ -->
+          <tr>
+            <td style="padding: 16px 24px 32px 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #1c2a3a; border-radius: 10px; border: 1px solid #263549; overflow: hidden;">
+                <tr>
+                  <!-- Orange left border accent -->
+                  <td style="width: 4px; background-color: #f6ad55;" width="4"></td>
+                  <td class="tip-cell" style="padding: 24px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <!-- Tip header -->
+                      <tr>
+                        <td style="padding-bottom: 10px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td style="padding-right: 8px; vertical-align: middle;">
+                                <!-- Lightbulb icon (text-based for email compatibility) -->
+                                <span style="font-size: 18px; line-height: 1;">&#128161;</span>
+                              </td>
+                              <td style="vertical-align: middle;">
+                                <p style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #f6ad55; text-transform: uppercase; letter-spacing: 0.05em;">
+                                  Compliance Tip
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <!-- Tip content -->
+                      <tr>
+                        <td>
+                          <p class="tip-content brand-body" style="margin: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 400; color: #e2e8f0; line-height: 1.65; font-style: italic;">
+                            {{complianceTip}}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               FOOTER
+               ============================================ -->
+          <tr>
+            <td class="footer-cell" style="padding: 32px 32px 40px 32px; background-color: #0d1420; border-top: 1px solid #1e293b;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <!-- Divider accent -->
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="width: 32px; height: 2px; background-color: #263549; border-radius: 1px;"></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Company name -->
+                <tr>
+                  <td align="center" style="padding-bottom: 8px;">
+                    <p class="footer-text" style="margin: 0; font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 600; color: #e2e8f0;">
+                      {{brand.name}}
+                    </p>
+                  </td>
+                </tr>
+                <!-- Company description -->
+                <tr>
+                  <td align="center" style="padding-bottom: 16px;">
+                    <p class="footer-text brand-body" style="margin: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 400; color: #64748b; line-height: 1.5;">
+                      Property compliance made simple for UK landlords.
+                    </p>
+                  </td>
+                </tr>
+                <!-- Links -->
+                <tr>
+                  <td align="center" style="padding-bottom: 20px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="padding: 0 8px;">
+                          <a href="https://landlordshield.biz" target="_blank" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 500; color: #4fd1c5; text-decoration: none;">
+                            Website
+                          </a>
+                        </td>
+                        <td style="color: #334155; font-size: 12px;">|</td>
+                        <td style="padding: 0 8px;">
+                          <a href="https://landlordshield.biz/dashboard" target="_blank" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 500; color: #4fd1c5; text-decoration: none;">
+                            Dashboard
+                          </a>
+                        </td>
+                        <td style="color: #334155; font-size: 12px;">|</td>
+                        <td style="padding: 0 8px;">
+                          <a href="https://landlordshield.biz/support" target="_blank" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 500; color: #4fd1c5; text-decoration: none;">
+                            Support
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Unsubscribe -->
+                <tr>
+                  <td align="center">
+                    <p class="footer-text brand-body" style="margin: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 400; color: #475569; line-height: 1.5;">
+                      You are receiving this because you subscribed to compliance updates.<br>
+                      <a href="{{unsubscribeUrl}}" target="_blank" style="color: #64748b; text-decoration: underline;">Unsubscribe</a>
+                      &nbsp;&middot;&nbsp;
+                      <a href="{{preferencesUrl}}" target="_blank" style="color: #64748b; text-decoration: underline;">Manage Preferences</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Email container -->
+
+      </td>
+    </tr>
+  </table>
+  <!-- /Outer wrapper -->
+
+</body>
+</html>

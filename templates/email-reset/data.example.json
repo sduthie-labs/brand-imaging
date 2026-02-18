@@ -1,0 +1,5 @@
+{
+  "resetUrl": "https://app.landlordshield.biz/reset?token=abc123def456",
+  "expiryMinutes": 30,
+  "userName": "Sarah"
+}

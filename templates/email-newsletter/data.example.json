@@ -1,0 +1,24 @@
+{
+  "issueNumber": 12,
+  "articles": [
+    {
+      "title": "Renters Rights Act: Key Dates for 2025",
+      "excerpt": "New compliance deadlines are approaching. Here is what every landlord needs to know about the upcoming changes.",
+      "url": "https://landlordshield.biz/blog/renters-rights-key-dates",
+      "category": "Legislation"
+    },
+    {
+      "title": "EPC Requirements Tightening in April",
+      "excerpt": "Energy Performance Certificate standards are changing. Find out if your properties meet the new minimum rating.",
+      "url": "https://landlordshield.biz/blog/epc-requirements",
+      "category": "Compliance"
+    },
+    {
+      "title": "Section 21 Notice: Complete Guide",
+      "excerpt": "Everything you need to know about serving a valid Section 21 notice under the current rules.",
+      "url": "https://landlordshield.biz/blog/section-21-guide",
+      "category": "Legal Guide"
+    }
+  ],
+  "complianceTip": "Always serve notices using recorded delivery and keep proof of postage. Digital notices may not be legally valid in all jurisdictions."
+}

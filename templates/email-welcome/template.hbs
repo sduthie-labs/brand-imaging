@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>Welcome to Landlord Shield</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="margin: 0; padding: 0; background-color: #0a0f18; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+
+  <!-- Preheader (hidden preview text) -->
+  <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+    Welcome aboard, {{userName}}! Your property compliance dashboard is ready. Manage deadlines, legal notices, and penalty protection all in one place.
+    &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
+  </div>
+
+  <!-- Outer wrapper table -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0f18;">
+    <tr>
+      <td align="center" style="padding: 40px 16px;">
+
+        <!-- Email container -->
+        <table role="presentation" class="email-container" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; width: 100%; background-color: #111827; border-radius: 16px; overflow: hidden; border: 1px solid #1e293b;">
+
+          <!-- ========================================
+               LOGO HEADER
+               ======================================== -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 40px 40px 24px 40px; background-color: #111827;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td align="center">
+                    {{#if brand.logos.icon}}
+                      <img src="{{brand.logos.icon}}" alt="Landlord Shield" width="48" height="48" style="display: block; width: 48px; height: 48px; border: 0;">
+                    {{else}}
+                      <!-- Fallback shield icon -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                          <td align="center" style="width: 48px; height: 48px; background-color: #4fd1c5; border-radius: 12px; font-size: 24px; line-height: 48px; text-align: center;">
+                            &#x1f6e1;
+                          </td>
+                        </tr>
+                      </table>
+                    {{/if}}
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top: 12px;">
+                    <span class="brand-heading" style="font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: 700; color: #e2e8f0; letter-spacing: 0.04em; text-transform: uppercase;">Landlord Shield</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========================================
+               DIVIDER
+               ======================================== -->
+          <tr>
+            <td class="content-padding" style="padding: 0 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="border-top: 1px solid #1e293b; font-size: 0; line-height: 0;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========================================
+               HERO SECTION
+               ======================================== -->
+          <tr>
+            <td class="content-padding" style="padding: 32px 40px 24px 40px; background-color: #111827;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td align="center">
+                    <h1 class="brand-heading hero-heading" style="margin: 0; font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; font-weight: 700; color: #e2e8f0; line-height: 1.25; letter-spacing: -0.02em; text-align: center;">
+                      Welcome to Landlord Shield,<br>
+                      <span style="color: #4fd1c5;">{{userName}}</span>
+                    </h1>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top: 16px;">
+                    <p class="brand-body hero-subtext" style="margin: 0; font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 400; color: #94a3b8; line-height: 1.6; text-align: center; max-width: 460px;">
+                      Your property compliance dashboard is ready. Stay ahead of every deadline, manage legal documents, and protect yourself from costly penalties &mdash; all in one place.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========================================
+               FEATURE CARDS (3 columns)
+               ======================================== -->
+          <tr>
+            <td class="content-padding" style="padding: 8px 40px 32px 40px; background-color: #111827;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <!-- Feature 1: Deadline Tracking -->
+                  <td class="feature-column" width="33.33%" valign="top" style="vertical-align: top;">
+                    <table role="presentation" class="feature-card" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td class="feature-card-inner" style="background-color: #1c2a3a; border-radius: 12px; padding: 24px 16px; text-align: center; border: 1px solid rgba(79, 209, 197, 0.1);">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td align="center" style="font-size: 28px; line-height: 1; padding-bottom: 12px;">
+                                &#x1f4c5;
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span class="brand-heading" style="font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; font-weight: 700; color: #e2e8f0; display: block; padding-bottom: 8px;">Deadline Tracking</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span class="brand-body" style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; font-weight: 400; color: #94a3b8; line-height: 1.5; display: block;">Never miss a gas safety check, EPC renewal, or licence deadline again.</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!-- Gutter -->
+                  <td class="gutter" width="12" style="width: 12px; font-size: 0; line-height: 0;">&nbsp;</td>
+
+                  <!-- Feature 2: Legal Notices -->
+                  <td class="feature-column" width="33.33%" valign="top" style="vertical-align: top;">
+                    <table role="presentation" class="feature-card" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td class="feature-card-inner" style="background-color: #1c2a3a; border-radius: 12px; padding: 24px 16px; text-align: center; border: 1px solid rgba(79, 209, 197, 0.1);">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td align="center" style="font-size: 28px; line-height: 1; padding-bottom: 12px;">
+                                &#x1f4dc;
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span class="brand-heading" style="font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; font-weight: 700; color: #e2e8f0; display: block; padding-bottom: 8px;">Legal Notices</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span class="brand-body" style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; font-weight: 400; color: #94a3b8; line-height: 1.5; display: block;">Generate compliant Section 21 and Section 8 notices with guided workflows.</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!-- Gutter -->
+                  <td class="gutter" width="12" style="width: 12px; font-size: 0; line-height: 0;">&nbsp;</td>
+
+                  <!-- Feature 3: Penalty Protection -->
+                  <td class="feature-column" width="33.33%" valign="top" style="vertical-align: top;">
+                    <table role="presentation" class="feature-card" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td class="feature-card-inner" style="background-color: #1c2a3a; border-radius: 12px; padding: 24px 16px; text-align: center; border: 1px solid rgba(79, 209, 197, 0.1);">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td align="center" style="font-size: 28px; line-height: 1; padding-bottom: 12px;">
+                                &#x1f6e1;
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span class="brand-heading" style="font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; font-weight: 700; color: #e2e8f0; display: block; padding-bottom: 8px;">Penalty Protection</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span class="brand-body" style="font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; font-weight: 400; color: #94a3b8; line-height: 1.5; display: block;">Stay compliant and avoid fines of up to &pound;30,000 with proactive alerts.</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========================================
+               CTA BUTTON
+               ======================================== -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 8px 40px 40px 40px; background-color: #111827;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td align="center" style="border-radius: 10px; background-color: #4fd1c5;">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{dashboardUrl}}" style="height:52px;v-text-anchor:middle;width:280px;" arcsize="19%" strokecolor="#4fd1c5" fillcolor="#4fd1c5">
+                      <w:anchorlock/>
+                      <center style="color:#0a0f18;font-family:'Outfit','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:16px;font-weight:700;">Go to Your Dashboard &rarr;</center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-->
+                    <a href="{{dashboardUrl}}" class="cta-button" target="_blank" style="display: inline-block; padding: 16px 48px; font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 700; color: #0a0f18; text-decoration: none; border-radius: 10px; background-color: #4fd1c5; line-height: 1; letter-spacing: 0.02em; text-align: center; mso-hide: all;">Go to Your Dashboard &rarr;</a>
+                    <!--<![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========================================
+               DIVIDER
+               ======================================== -->
+          <tr>
+            <td class="content-padding" style="padding: 0 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="border-top: 1px solid #1e293b; font-size: 0; line-height: 0;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========================================
+               FOOTER
+               ======================================== -->
+          <tr>
+            <td class="content-padding" style="padding: 32px 40px 40px 40px; background-color: #111827;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td align="center">
+                    <p class="brand-body" style="margin: 0; font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; font-weight: 400; color: #94a3b8; line-height: 1.6; text-align: center;">
+                      &copy; {{currentYear}} Landlord Shield &middot; landlordshield.biz
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top: 8px;">
+                    <p class="brand-body" style="margin: 0; font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; font-weight: 400; color: #64748b; line-height: 1.6; text-align: center;">
+                      You received this email because you created an account on Landlord Shield.<br>
+                      <a href="{{unsubscribeUrl}}" style="color: #4fd1c5; text-decoration: underline;">Unsubscribe</a> &middot;
+                      <a href="{{preferencesUrl}}" style="color: #4fd1c5; text-decoration: underline;">Email Preferences</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Email container -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

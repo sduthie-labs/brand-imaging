@@ -1,0 +1,105 @@
+/* --------------------------------------------------------------------------
+   Email Alert Template — Dark-themed compliance deadline warning
+   -------------------------------------------------------------------------- */
+
+/* Email resets — normalize rendering across email clients */
+body,
+table,
+td,
+a {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+table,
+td {
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #0a0f18;
+}
+
+/* Brand typography classes */
+.brand-heading {
+  font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brand-body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 600px) {
+  .email-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .content-padding {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .hero-heading {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-subtext {
+    font-size: 14px !important;
+  }
+
+  .days-number {
+    font-size: 36px !important;
+  }
+
+  .detail-label {
+    font-size: 11px !important;
+  }
+
+  .detail-value {
+    font-size: 14px !important;
+  }
+
+  .cta-button {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .cta-button a {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .property-card {
+    padding: 20px 16px !important;
+  }
+
+  .action-card {
+    padding: 20px 16px !important;
+  }
+
+  .urgency-badge {
+    font-size: 11px !important;
+    padding: 6px 16px !important;
+  }
+}

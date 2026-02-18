@@ -1,0 +1,129 @@
+/* --------------------------------------------------------------------------
+   Email Newsletter Template — Compliance Digest
+   Minimal CSS for email client support with mobile responsiveness
+   --------------------------------------------------------------------------
+   NOTE: Email clients strip most CSS. Critical styles are inlined in
+   template.hbs. This file provides resets and mobile overrides only.
+   -------------------------------------------------------------------------- */
+
+/* ---- Email resets ---- */
+
+body,
+table,
+td,
+a {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+table,
+td {
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ---- Brand typography classes ---- */
+
+.brand-heading {
+  font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brand-body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ---- Mobile responsiveness ---- */
+
+@media only screen and (max-width: 620px) {
+  /* Force full-width layout */
+  .email-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Stack article card content */
+  .article-card {
+    padding: 20px 16px !important;
+  }
+
+  .article-title {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+
+  .article-excerpt {
+    font-size: 14px !important;
+  }
+
+  /* Adjust header spacing */
+  .header-cell {
+    padding: 24px 16px !important;
+  }
+
+  .header-title {
+    font-size: 22px !important;
+  }
+
+  .header-subtitle {
+    font-size: 13px !important;
+  }
+
+  /* Adjust compliance tip */
+  .tip-cell {
+    padding: 20px 16px !important;
+  }
+
+  .tip-content {
+    font-size: 14px !important;
+  }
+
+  /* Adjust footer */
+  .footer-cell {
+    padding: 24px 16px !important;
+  }
+
+  .footer-text {
+    font-size: 12px !important;
+  }
+
+  /* CTA button */
+  .cta-link {
+    font-size: 13px !important;
+    padding: 8px 18px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-title {
+    font-size: 19px !important;
+  }
+
+  .article-title {
+    font-size: 16px !important;
+  }
+
+  .category-badge {
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+}

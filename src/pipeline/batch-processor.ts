@@ -6,16 +6,19 @@ import type {
   PipelineOptions,
 } from '../types/index.js';
 import { Renderer } from '../core/renderer.js';
+import { EmailRenderer } from '../core/email-renderer.js';
 import { TemplateEngine } from '../core/template-engine.js';
 import { loadBrandKit } from '../config/brand-kit.js';
 import type { BrandKit } from '../types/brand.js';
 
 export class BatchProcessor {
   private renderer: Renderer;
+  private emailRenderer: EmailRenderer;
   private templateEngine: TemplateEngine;
 
   constructor() {
     this.renderer = new Renderer();
+    this.emailRenderer = new EmailRenderer();
     this.templateEngine = new TemplateEngine();
   }
 
@@ -27,7 +30,10 @@ export class BatchProcessor {
     const limit = pLimit(concurrency);
     const start = performance.now();
 
-    await this.renderer.initialize();
+    const hasPngJobs = jobs.some((j) => j.outputType !== 'html');
+    if (hasPngJobs) {
+      await this.renderer.initialize();
+    }
 
     const results: BatchResult['results'] = [];
     let successful = 0;
@@ -49,29 +55,50 @@ export class BatchProcessor {
           }
 
           const template = await this.templateEngine.loadTemplate(job.template);
-          const html = this.templateEngine.compile(
-            template,
-            job.data,
-            job.format,
-            brandKit,
-          );
 
           let result: RenderResult;
-          if (job.outputPath) {
-            result = await this.renderer.renderToFile(
-              html,
+
+          if (job.outputType === 'html') {
+            const html = this.templateEngine.compileEmail(
+              template,
+              job.data,
               job.format,
-              job.outputPath,
-              {
+              brandKit,
+            );
+
+            if (job.outputPath) {
+              result = await this.emailRenderer.renderToFile(
+                html,
+                job.format,
+                job.outputPath,
+              );
+            } else {
+              result = this.emailRenderer.render(html, job.format);
+            }
+          } else {
+            const html = this.templateEngine.compile(
+              template,
+              job.data,
+              job.format,
+              brandKit,
+            );
+
+            if (job.outputPath) {
+              result = await this.renderer.renderToFile(
+                html,
+                job.format,
+                job.outputPath,
+                {
+                  quality: job.quality,
+                  scaleFactor: job.scaleFactor,
+                },
+              );
+            } else {
+              result = await this.renderer.render(html, job.format, {
                 quality: job.quality,
                 scaleFactor: job.scaleFactor,
-              },
-            );
-          } else {
-            result = await this.renderer.render(html, job.format, {
-              quality: job.quality,
-              scaleFactor: job.scaleFactor,
-            });
+              });
+            }
           }
 
           successful++;
@@ -90,7 +117,10 @@ export class BatchProcessor {
     );
 
     await Promise.all(promises);
-    await this.renderer.close();
+
+    if (hasPngJobs) {
+      await this.renderer.close();
+    }
 
     return {
       total: jobs.length,
